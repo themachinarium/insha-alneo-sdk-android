@@ -39,6 +39,7 @@ import com.machinarum.alneo.ui.theme.AlneoPOSTheme
 import com.machinarum.alneo_sdk.data.api.repository.AlneoRepo
 import com.machinarum.alneo_sdk.data.api.utils.onError
 import com.machinarum.alneo_sdk.data.api.utils.onSuccess
+import com.machinarum.alneo_sdk.data.di.AlneoSDK
 import com.machinarum.alneo_sdk.data.di.AlneoSdkInitializer
 
 class MainActivity : ComponentActivity() {
@@ -47,7 +48,9 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             AlneoPOSTheme {
-                AlneoSdkInitializer.initialize(this)
+               // AlneoSdkInitializer.initialize(this)
+                AlneoSDK.startPaymentMethodActivity(this)
+
             }
         }
     }
