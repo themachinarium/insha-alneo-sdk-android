@@ -3,8 +3,8 @@ package com.machinarum.alneo_sdk.data.models.entity
 import com.google.gson.annotations.SerializedName
 
 data class ErrorEntity(
-    @SerializedName("code")
+    @SerializedName("status")
     val code: String?,
-    @SerializedName("message")
+    @SerializedName("error")
     val message: String?
 )
