@@ -18,7 +18,15 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = true
+            isMinifyEnabled = false
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+        }
+
+        debug {
+            isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -73,6 +81,7 @@ dependencies {
     api(libs.gson)
     api(libs.logging.interceptor)
     api(libs.retrofit2.kotlin.coroutines.adapter)
+    api( libs.converter.moshi)
 
     //Timber
     api(libs.timber)
@@ -80,18 +89,18 @@ dependencies {
     api(libs.sdp.android)
 
 
-    afterEvaluate {
-        publishing {
-            publications {
-                create<MavenPublication>("release") {
-                    from(components["release"])
-                    groupId = "com.machinarum"
-                    artifactId = "alneo-sdk"
-                    version = "1.0"
-                }
-            }
-        }
-    }
+//    afterEvaluate {
+//        publishing {
+//            publications {
+//                create<MavenPublication>("release") {
+//                    from(components["release"])
+//                    groupId = "com.machinarum"
+//                    artifactId = "alneo-sdk"
+//                    version = "1.0"
+//                }
+//            }
+//        }
+//    }
 
 
 }

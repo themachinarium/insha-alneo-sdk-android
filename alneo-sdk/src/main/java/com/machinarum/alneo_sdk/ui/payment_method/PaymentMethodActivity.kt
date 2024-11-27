@@ -5,13 +5,16 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.machinarum.alneo_sdk.BuildConfig
 import com.machinarum.alneo_sdk.R
 import com.machinarum.alneo_sdk.databinding.ActivityPaymentMethodBinding
 import com.machinarum.alneo_sdk.utils.Helper.isPackageInstalled
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class PaymentMethodActivity : AppCompatActivity() {
 
@@ -19,12 +22,17 @@ class PaymentMethodActivity : AppCompatActivity() {
         ActivityPaymentMethodBinding.inflate(layoutInflater)
     }
 
-    val contactlessAppPackageName = "com.provisionpay.softpos.alneo"
+    private val viewModel by viewModel<PaymentMethodVM>()
 
+    private val contactlessAppPackageName = "com.provisionpay.softpos.alneo"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+        binding.apply {
+            lifecycleOwner = this@PaymentMethodActivity
+            vm = viewModel
+        }
 
         binding.nfcItem.setOnClickListener {
             openNFC()
@@ -36,13 +44,12 @@ class PaymentMethodActivity : AppCompatActivity() {
         checkNFC()
     }
 
-
     private fun openNFC() {
         //ok go on
         //adb shell am start -a android.intent.action.VIEW -d https://alneo.com.tr/payment?paymentSessionToken=666DD084DBBFD279
         val browserIntent = Intent(
             Intent.ACTION_VIEW, Uri.parse(
-                "https://alneo.com.tr/payment?paymentSessionToken=$666DD084DBBFD279"
+                "https://alneo.com.tr/payment?paymentSessionToken=${viewModel.sessionToken.value}"
             )
         )
         if (Build.VERSION.SDK_INT >= 31) {
@@ -59,7 +66,6 @@ class PaymentMethodActivity : AppCompatActivity() {
         }
     }
 
-
     private fun showMaterialDialog() {
         val dialog = MaterialAlertDialogBuilder(this)
             .setTitle(getString(R.string.dialog_app_contactless_not_available))
@@ -75,12 +81,16 @@ class PaymentMethodActivity : AppCompatActivity() {
 
         dialog.setOnShowListener {
             val negativeButton = dialog.getButton(AlertDialog.BUTTON_NEGATIVE)
-            negativeButton.setTextColor(ContextCompat.getColor(this, R.color.red_a)) // Set custom color
+            negativeButton.setTextColor(
+                ContextCompat.getColor(
+                    this,
+                    R.color.red_a
+                )
+            ) // Set custom color
         }
         dialog.show()
 
     }
-
 
     private fun openAppStore() {
         try {
