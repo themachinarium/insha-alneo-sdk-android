@@ -1,13 +1,13 @@
 package com.machinarum.alneo_sdk.data.api.services
 
-import com.google.gson.JsonArray
-import com.machinarum.alneo_sdk.data.models.request.LoginRequest
+import com.machinarum.alneo_sdk.data.models.request.CreateContactlessPaymentSessionRequest
+import com.machinarum.alneo_sdk.data.models.response.CreateContactlessPaymentSessionResponse
 import retrofit2.http.Body
 import retrofit2.http.POST
 
 interface AlneoApiServices {
 
-    @POST("/service/auth/login")
-    suspend fun login(@Body request: LoginRequest): JsonArray
+    @POST("/service/payment/create/session/contactless")
+    suspend fun createContactlessPaymentSession(@Body request: CreateContactlessPaymentSessionRequest): CreateContactlessPaymentSessionResponse
 
 }

@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    kotlin("kapt")
+    `maven-publish`
 }
 
 android {
@@ -22,6 +24,14 @@ android {
                 "proguard-rules.pro"
             )
         }
+
+        debug {
+            isMinifyEnabled = false
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+        }
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
@@ -30,13 +40,22 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+
+    buildFeatures {
+        buildConfig = true
+        //noinspection DataBindingWithoutKapt
+        dataBinding = true
+        viewBinding = true
+    }
 }
 
 dependencies {
 
-    implementation(project(":alneo-sdk"))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
+    implementation(libs.material)
+    implementation(libs.androidx.activity)
+    implementation(libs.androidx.constraintlayout)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -48,6 +67,7 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.androidx.databinding.runtime)  // Adjust version as needed
 
 
     //Koin
@@ -61,8 +81,26 @@ dependencies {
     api(libs.gson)
     api(libs.logging.interceptor)
     api(libs.retrofit2.kotlin.coroutines.adapter)
+    api( libs.converter.moshi)
 
     //Timber
     api(libs.timber)
+
+    api(libs.sdp.android)
+
+
+//    afterEvaluate {
+//        publishing {
+//            publications {
+//                create<MavenPublication>("release") {
+//                    from(components["release"])
+//                    groupId = "com.machinarum"
+//                    artifactId = "alneo-sdk"
+//                    version = "1.0"
+//                }
+//            }
+//        }
+//    }
+
 
 }

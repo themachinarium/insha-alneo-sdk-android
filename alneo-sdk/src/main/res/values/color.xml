@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3647C6</color>
+    <color name="colorPrimaryDark">#3647C6</color>
+    <color name="colorAccent">#3647C6</color>
+
+    <color name="color_1">#047bf8</color>
+    <color name="color_2">#2E1170</color>
+    <color name="color_3">#0073ff</color>
+    <color name="color_4">#6d16a3</color>
+    <color name="color_5">#5211e6</color>
+    <color name="color_6">#9db2ff</color>
+    <color name="color_7">#e65252</color>
+    <color name="color_8">#FBB463</color>
+    <color name="color_9">#90be2e</color>
+    <color name="color_10">#c21a1a</color>
+    <color name="color_11">#71c21a</color>
+    <color name="color_12">#f8bc34</color>
+    <color name="color_13">#60769f</color>
+    <color name="color_14">#f2f4f8</color>
+    <color name="color_15">#C76DC8</color>
+    <color name="color_16">#98c9fd</color>
+    <color name="color_17">#AEC8FF</color>
+    <color name="color_18">#000</color>
+
+    <color name="gray">#808080</color>
+    <color name="grayLight">#f6f7f9</color>
+    <color name="grayLight_v2">#80f6fbfb</color>
+    <color name="grayDark">#e9eaee</color>
+    <color name="grayText">#90959b</color>
+
+    <color name="black">#000</color>
+    <color name="white">#ffffff</color>
+    <color name="transparent">#00000000</color>
+
+
+    <!-- v2 colors -->
+    <color name="pink_v2">#F5188b</color>
+    <color name="turqoise_v2">#74d0be</color>
+    <color name="green_v2">#03DC98</color>
+    <color name="blue_v2">#1321b4</color>
+    <color name="grey_v2">#f9f9f9</color>
+    <color name="ligh_grey_v2">#f7f8fc</color>
+
+    <!-- v3 colors -->
+    <color name="brown_20">#33826F43</color>    <!-- opacity 20-->
+    <color name="brown_5">#0D826F43</color>     <!-- opacity 5-->
+    <color name="brown_b_40">#4056391A</color>
+
+    <color name="black_30">#4D000000</color>
+    <color name="golden">#F7C478</color>
+
+    <color name="orange_a">#FFAA5F</color>
+    <color name="orange_b">#F99774</color>
+    <color name="orange_c">#DD8A31</color>
+
+    <color name="white_b">#F8F8F8</color>
+    <color name="white_60">#99ffffff</color>
+    <color name="white_75">#BFffffff</color>
+    <color name="white_20">#33ffffff</color>
+    <color name="gray_a">#9C9792</color>
+    <color name="gray_b">#669C9792</color>
+    <color name="gray_c">#80E0DBD2</color>
+
+    <color name="red_a">#9F041B</color>
+    <color name="red_b">#842E39</color>
+    <color name="red_c">#890C19</color>
+
+    <color name="indigo_a">#474B8C</color>
+    <color name="azure">#1db0f2</color>
+    <color name="azul">#2d74d8</color>
+    <color name="azul_two">#3866dc</color>
+    <color name="lightPeriwinkle">#ced5f2</color>
+    <color name="indigo_dark">#0f1e42</color>
+    <color name="grey_blue">#9ba1b3</color>
+    <color name="grey_blue_light">#9fb3d1</color>
+    <color name="grey_blue_light_2">#c3c7d2</color>
+    <color name="grey_blue_light_10">#1A9fb3d1</color>
+    <color name="grey_blue_light_20">#409fb3d1</color>
+    <color name="gray_pale">#f7f9fc</color>
+    <color name="bubbleGumPink">#ff6b9a</color>
+    <color name="statUp">#50e3c2</color>
+    <color name="statNone">#e3de56</color>
+    <color name="statDown">#ff6b9a</color>
+    <color name="color_d">#f2f3f5</color>
+    <color name="grey_2">#657285</color>
+    <color name="onboarding">#3648c7</color>
+    <color name="dark_sky_blue">#397aea</color>
+    <color name="cerulean">#027de1</color>
+    <color name="light_blue">#7cbbee</color>
+
+    <color name="pale_orange">#ffa159</color>
+    <color name="lightish_green">#50e67b</color>
+    <color name="dark_mint">#47cc83</color>
+    <color name="warm_pink">#ff5975</color>
+    <!-- opacity
+        100% — FF
+        95% — F2
+        90% — E6
+        85% — D9
+        80% — CC
+        75% — BF
+        70% — B3
+        65% — A6
+        60% — 99
+        55% — 8C
+        50% — 80
+        45% — 73
+        40% — 66
+        35% — 59
+        30% — 4D
+        25% — 40
+        20% — 33
+        15% — 26
+        10% — 1A
+        5% — 0D
+        0% — 00
+    -->
+
+    <!-- calendar -->
+    <color name="date_picker_view_animator">#FFF2F2F2</color>
+    <color name="calendar_header">#3647c6</color>
+    <color name="line_background">#9fb3d1</color>
+    <color name="date_picker_text_normal">#3647c6</color>
+    <color name="done_text_color_normal">#3647c6</color>
+    <color name="done_text_color_disabled">#F5188b</color>
+
+</resources>
