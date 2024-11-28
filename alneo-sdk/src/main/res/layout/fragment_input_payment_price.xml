@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.machinarum.alneo_sdk.ui.price.InputPaymentPriceVM" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background">
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/textview_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_48sdp"
+            android:layout_marginTop="@dimen/_65sdp"
+            android:layout_marginRight="@dimen/_48sdp"
+            android:background="@drawable/bg_input_price"
+            android:fontFamily="@font/montserrat_medium"
+            android:gravity="center"
+            android:padding="@dimen/_12sdp"
+            android:text="@{viewModel.formattedPrice}"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_24sdp"
+            android:visibility="visible"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="@dimen/_16sdp"
+            app:layout_constraintBottom_toTopOf="@id/nextBtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textview_price">
+
+            <!-- row #1 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/numpad_btn_1"
+                    style="@style/Button.PinButton"
+                    android:layout_width="@dimen/_54sdp"
+                    android:layout_height="@dimen/_54sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:onClick="@{()->viewModel.onNumberButtonClicked(1)}"
+                    android:text="1" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/numpad_btn_2"
+                    style="@style/Button.PinButton"
+                    android:layout_width="@dimen/_54sdp"
+                    android:layout_height="@dimen/_54sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:onClick="@{()->viewModel.onNumberButtonClicked(2)}"
+                    android:text="2" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/numpad_btn_3"
+                    style="@style/Button.PinButton"
+                    android:layout_width="@dimen/_54sdp"
+                    android:layout_height="@dimen/_54sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:onClick="@{()->viewModel.onNumberButtonClicked(3)}"
+                    android:text="3" />
+
+            </LinearLayout>
+
+            <!-- row #2 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/numpad_btn_4"
+                    style="@style/Button.PinButton"
+                    android:layout_width="@dimen/_54sdp"
+                    android:layout_height="@dimen/_54sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:onClick="@{()->viewModel.onNumberButtonClicked(4)}"
+                    android:text="4" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/numpad_btn_5"
+                    style="@style/Button.PinButton"
+                    android:layout_width="@dimen/_54sdp"
+                    android:layout_height="@dimen/_54sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:onClick="@{()->viewModel.onNumberButtonClicked(5)}"
+                    android:text="5" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/numpad_btn_6"
+                    style="@style/Button.PinButton"
+                    android:layout_width="@dimen/_54sdp"
+                    android:layout_height="@dimen/_54sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:onClick="@{()->viewModel.onNumberButtonClicked(6)}"
+                    android:text="6" />
+
+            </LinearLayout>
+
+            <!-- row #3 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/numpad_btn_7"
+                    style="@style/Button.PinButton"
+                    android:layout_width="@dimen/_54sdp"
+                    android:layout_height="@dimen/_54sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:onClick="@{()->viewModel.onNumberButtonClicked(7)}"
+                    android:text="7" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/numpad_btn_8"
+                    style="@style/Button.PinButton"
+                    android:layout_width="@dimen/_54sdp"
+                    android:layout_height="@dimen/_54sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:onClick="@{()->viewModel.onNumberButtonClicked(8)}"
+                    android:text="8" />
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/numpad_btn_9"
+                    style="@style/Button.PinButton"
+                    android:layout_width="@dimen/_54sdp"
+                    android:layout_height="@dimen/_54sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:onClick="@{()->viewModel.onNumberButtonClicked(9)}"
+                    android:text="9" />
+
+            </LinearLayout>
+
+            <!-- row #4 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/Button.PinButton"
+                    android:layout_width="@dimen/_54sdp"
+                    android:layout_height="@dimen/_54sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:visibility="invisible" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/numpad_btn_0"
+                    style="@style/Button.PinButton"
+                    android:layout_width="@dimen/_54sdp"
+                    android:layout_height="@dimen/_54sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:onClick="@{()->viewModel.onNumberButtonClicked(0)}"
+                    android:text="0" />
+
+
+                <RelativeLayout
+                    android:id="@+id/deleteBtn"
+                    android:layout_width="@dimen/_54sdp"
+                    android:layout_height="@dimen/_54sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:background="@drawable/bg_number_btn">
+
+                    <ImageView
+                        android:id="@+id/imageview_delete_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        android:adjustViewBounds="true"
+                        android:background="?selectableItemBackgroundBorderless"
+                        android:onClick="@{()->viewModel.onDeleteButtonClicked()}"
+                        android:padding="@dimen/_12sdp"
+                        android:src="@drawable/ic_backspace" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/nextBtn"
+            style="@style/Primary.Button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            android:text="@string/to_continue"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

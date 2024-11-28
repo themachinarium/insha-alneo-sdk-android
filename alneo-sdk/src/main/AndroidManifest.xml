@@ -6,12 +6,13 @@
 
     <application android:usesCleartextTraffic="true">
         <activity
+            android:name=".ui.MainActivity"
+            android:exported="false"
+            android:theme="@style/AppTheme" />
+        <activity
             android:name=".ui.payment_method.PaymentMethodActivity"
             android:exported="false"
-            android:theme="@style/AppTheme">
-
-
-        </activity>
+            android:theme="@style/AppTheme" />
     </application>
 
 </manifest>
