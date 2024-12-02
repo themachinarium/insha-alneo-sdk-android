@@ -10,16 +10,18 @@
         android:name="com.machinarum.alneo_sdk.ui.price.InputPaymentPriceFragment"
         android:label="TUTAR GİRİNİZ"
         tools:layout="@layout/fragment_input_payment_price">
-
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            android:id="@+id/action_InputPaymentPriceFragment_to_paymentMethodFragment"
+            app:destination="@id/paymentMethodFragment" />
     </fragment>
     <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.machinarum.alneo_sdk.ui.SecondFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
-
+        android:id="@+id/paymentMethodFragment"
+        tools:layout="@layout/fragment_payment_method"
+        android:name="com.machinarum.alneo_sdk.ui.method.PaymentMethodFragment"
+        android:label="TAHSİLAT YÖNTEMİ" >
+        <argument
+            android:name="price"
+            app:argType="long" />
     </fragment>
+
 </navigation>

@@ -1,12 +1,15 @@
 package com.machinarum.alneo_sdk.ui.price
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.machinarum.alneo_sdk.databinding.FragmentInputPaymentPriceBinding
+import com.machinarum.alneo_sdk.utils.Helper.navigateSafely
+import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
@@ -32,8 +35,14 @@ class InputPaymentPriceFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.nextBtn.setOnClickListener {
-            Log.e("InputPaymentPriceFragment ${viewModel.price.value}", ((viewModel.price.value ?:0)/100.0).toString())
+        lifecycleScope.launch {
+            viewModel.navigateToPaymentMethod.collect {
+                if (it)
+                    findNavController().navigateSafely(
+                        InputPaymentPriceFragmentDirections
+                            .actionInputPaymentPriceFragmentToPaymentMethodFragment()
+                    )
+            }
         }
     }
 

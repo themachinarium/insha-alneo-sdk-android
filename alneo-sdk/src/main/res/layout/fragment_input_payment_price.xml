@@ -239,6 +239,7 @@
             style="@style/Primary.Button"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_50sdp"
+            android:onClick="@{()->viewModel.nextButtonClicked()}"
             android:text="@string/to_continue"
             app:layout_constraintBottom_toBottomOf="parent" />
 
