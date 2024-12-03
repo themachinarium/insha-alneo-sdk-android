@@ -40,4 +40,9 @@
     <string name="payment_with_sms_warning">Oluşturulan tahsilat SMS\'i sadece 24 saat süre ile aktif durumda kalacaktır.</string>
     <string name="message_phone_number_can_not_be_empty">Telefon numaranız boş olamaz.</string>
     <string name="message_fit_phone_number_digits">Telefon numarası 11 basamaklı olmalıdır.</string>
+    <string name="payment_with_email_description">Müşterinizin E-posta Adresi</string>
+    <string name="your_customer_email">Müşterinizin E-posta Adresi</string>
+    <string name="payment_with_email_warning">Oluşturulan tahsilat linki sadece 24 saat süre ile aktif durumda kalacaktır.</string>
+    <string name="message_email_can_not_be_empty">E-posta adresiniz boş olamaz.</string>
+    <string name="message_email_not_valid">Girdiğiniz e-posta adresi geçersizdir.</string>
 </resources>

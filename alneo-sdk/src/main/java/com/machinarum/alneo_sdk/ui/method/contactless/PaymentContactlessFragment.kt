@@ -42,6 +42,14 @@ class PaymentContactlessFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.nextBtn.setOnClickListener {
+            openNFC()
+        }
+
+        observeViewModel()
+    }
+
+    private fun observeViewModel() {
         lifecycleScope.launch {
             viewModel.loading.collect {
                 binding.loading.visibility = if (it) View.VISIBLE else View.GONE
@@ -53,10 +61,6 @@ class PaymentContactlessFragment : Fragment() {
                 if (it.isNullOrEmpty()) return@collect
                 Helper.showBasicSnackbar(binding.root, it)
             }
-        }
-
-        binding.nextBtn.setOnClickListener {
-            openNFC()
         }
     }
 
@@ -99,7 +103,6 @@ class PaymentContactlessFragment : Fragment() {
             )
         }
     }
-
 
     private fun openAppStore() {
         try {

@@ -28,6 +28,9 @@
         <action
             android:id="@+id/action_paymentMethodFragment_to_paymentSMSFragment"
             app:destination="@id/paymentSMSFragment" />
+        <action
+            android:id="@+id/action_paymentMethodFragment_to_paymentEmailFragment"
+            app:destination="@id/paymentEmailFragment" />
     </fragment>
     <fragment
         android:id="@+id/paymentContactlessFragment"
@@ -43,6 +46,15 @@
         android:name="com.machinarum.alneo_sdk.ui.method.sms.PaymentSMSFragment"
         android:label="@string/payment_method_sms"
         tools:layout="@layout/fragment_payment_sms">
+        <argument
+            android:name="price"
+            app:argType="long" />
+    </fragment>
+    <fragment
+        android:id="@+id/paymentEmailFragment"
+        android:name="com.machinarum.alneo_sdk.ui.method.email.PaymentEmailFragment"
+        android:label="@string/payment_method_email"
+        tools:layout="@layout/fragment_payment_email">
         <argument
             android:name="price"
             app:argType="long" />
