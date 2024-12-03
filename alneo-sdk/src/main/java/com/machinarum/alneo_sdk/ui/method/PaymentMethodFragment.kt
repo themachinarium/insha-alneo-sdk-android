@@ -64,6 +64,13 @@ class PaymentMethodFragment : Fragment() {
                     )
                 )
         }
+        binding.smsPayment.setOnClickListener {
+            findNavController().navigateSafely(
+                PaymentMethodFragmentDirections.actionPaymentMethodFragmentToPaymentSMSFragment(
+                    args.price
+                )
+            )
+        }
     }
 
     companion object {

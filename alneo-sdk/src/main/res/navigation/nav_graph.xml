@@ -25,12 +25,24 @@
         <action
             android:id="@+id/action_paymentMethodFragment_to_paymentContactlessFragment"
             app:destination="@id/paymentContactlessFragment" />
+        <action
+            android:id="@+id/action_paymentMethodFragment_to_paymentSMSFragment"
+            app:destination="@id/paymentSMSFragment" />
     </fragment>
     <fragment
         android:id="@+id/paymentContactlessFragment"
         tools:layout="@layout/fragment_payment_contactless"
         android:name="com.machinarum.alneo_sdk.ui.method.contactless.PaymentContactlessFragment"
         android:label="@string/payment_contactless_toolbar_title" >
+        <argument
+            android:name="price"
+            app:argType="long" />
+    </fragment>
+    <fragment
+        android:id="@+id/paymentSMSFragment"
+        android:name="com.machinarum.alneo_sdk.ui.method.sms.PaymentSMSFragment"
+        android:label="@string/payment_method_sms"
+        tools:layout="@layout/fragment_payment_sms">
         <argument
             android:name="price"
             app:argType="long" />

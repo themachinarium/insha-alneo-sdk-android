@@ -13,7 +13,7 @@ import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
-class PaymentContactlessVM(val repository: AlneoRepo, val argsPrice: Long) : ViewModel() {
+class PaymentContactlessVM(private val repository: AlneoRepo, val argsPrice: Long) : ViewModel() {
 
     private val _sessionToken = MutableStateFlow<String>("")
     val sessionToken = _sessionToken.asStateFlow()

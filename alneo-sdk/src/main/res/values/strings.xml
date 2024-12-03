@@ -4,6 +4,7 @@
     <string name="yes_uppercase">EVET</string>
     <string name="no">HAYIR</string>
 
+    <string name="sneaker_error">Hata</string>
     <string name="payment_method_direct">Doğrudan Tahsilat</string>
     <string name="payment_method_direct_description">Müşterilerinizin kart bilgilerini girerek tahsilat yapabilirsiniz.</string>
     <string name="payment_method_sms">SMS ilə Tahsilat</string>
@@ -33,4 +34,10 @@
     <string name="payment_method_toolbar_title">TAHSİLAT YÖNTEMİ</string>
     <string name="payment_contactless_toolbar_title">TEMASSIZ TAHSİLAT</string>
     <string name="input_price_toolbar_title">TUTAR GİRİNİZ</string>
+    <string name="payment_with_sms_description">Tahsilat yapacağınız müşterinin telefon numarasını ilgili alana yazınız.</string>
+    <string name="your_customer_phone_number">Müşterinizin Telefon Numarası</string>
+    <string name="description_optional">Açıklama (Opsionel)</string>
+    <string name="payment_with_sms_warning">Oluşturulan tahsilat SMS\'i sadece 24 saat süre ile aktif durumda kalacaktır.</string>
+    <string name="message_phone_number_can_not_be_empty">Telefon numaranız boş olamaz.</string>
+    <string name="message_fit_phone_number_digits">Telefon numarası 11 basamaklı olmalıdır.</string>
 </resources>
