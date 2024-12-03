@@ -25,6 +25,7 @@
     <style name="ToolbarTheme" parent="ThemeOverlay.AppCompat.Light">
         <item name="android:fontFamily">@font/montserrat_semi_bold</item>
         <item name="colorControlNormal">@color/white</item>
+        <item name="textAllCaps">true</item>
     </style>
 
     <style name="ImageCropContainerTheme" parent="Theme.AppCompat">
