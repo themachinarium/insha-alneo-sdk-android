@@ -71,6 +71,14 @@ class PaymentMethodFragment : Fragment() {
                 )
             )
         }
+        binding.emailPayment.setOnClickListener {
+            findNavController().navigateSafely(
+                PaymentMethodFragmentDirections.actionPaymentMethodFragmentToPaymentEmailFragment(
+                    args.price
+                )
+            )
+
+        }
     }
 
     companion object {

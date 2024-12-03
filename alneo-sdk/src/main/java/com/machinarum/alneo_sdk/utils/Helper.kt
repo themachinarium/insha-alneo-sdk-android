@@ -3,12 +3,11 @@ package com.machinarum.alneo_sdk.utils
 import android.content.Context
 import android.content.pm.PackageManager
 import android.nfc.NfcManager
+import android.text.TextUtils
+import android.util.Patterns
 import android.view.View
-import androidx.annotation.IdRes
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
-import androidx.navigation.NavController
-import androidx.navigation.NavDirections
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
 import com.machinarum.alneo_sdk.R
@@ -33,6 +32,10 @@ object Helper {
             return adapter != null
         }
         return false
+    }
+
+    fun validateEmail(email: String?): Boolean {
+        return !TextUtils.isEmpty(email) && Patterns.EMAIL_ADDRESS.matcher(email).matches()
     }
 
      fun showMaterialDialog(

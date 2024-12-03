@@ -4,18 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="viewModel"
-            type="com.machinarum.alneo_sdk.ui.method.sms.PaymentSMSVM" />
+            type="com.machinarum.alneo_sdk.ui.method.email.PaymentEmailVM" />
 
     </data>
-
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.method.sms.PaymentSMSFragment">
+        tools:context=".ui.method.email.PaymentEmailFragment">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="match_parent"
@@ -52,7 +50,7 @@
                     android:layout_height="@dimen/_96sdp"
                     android:layout_gravity="center"
                     android:adjustViewBounds="true"
-                    app:srcCompat="@drawable/ic_header_code" />
+                    app:srcCompat="@drawable/ic_header_envelope" />
 
                 <TextView
                     android:id="@+id/textview_description"
@@ -62,7 +60,7 @@
                     android:gravity="center"
                     android:paddingTop="@dimen/_10sdp"
                     android:paddingBottom="@dimen/_10sdp"
-                    android:text="@string/payment_with_sms_description"
+                    android:text="@string/payment_with_email_description"
                     android:textColor="@color/indigo_dark"
                     android:textSize="14sp" />
 
@@ -72,18 +70,16 @@
                     android:layout_height="wrap_content">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/input_edittext_phone_number"
+                        android:id="@+id/input_edittext_email"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_50sdp"
                         android:layout_gravity="start"
-                        android:digits="0123456789 "
                         android:fontFamily="@font/montserrat_regular"
                         android:gravity="start"
-                        android:text="@={viewModel.phoneNumber}"
-                        android:hint="@string/your_customer_phone_number"
+                        android:text="@={viewModel.email}"
+                        android:hint="@string/your_customer_email"
                         android:imeOptions="actionNext"
-                        android:inputType="numberSigned"
-                        android:maxLength="13"
+                        android:inputType="textEmailAddress"
                         android:textColor="@color/indigo_dark"
                         android:textSize="16sp" />
 
@@ -147,9 +143,9 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="@{viewModel.formattedPrice}"
                             android:fontFamily="@font/montserrat_medium"
                             android:gravity="end"
+                            android:text="@{viewModel.formattedPrice}"
                             android:textColor="@color/black" />
                     </LinearLayout>
 
@@ -186,10 +182,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/montserrat_medium"
-                    android:gravity="start"
+                    android:gravity="center"
                     android:paddingTop="@dimen/_10sdp"
                     android:paddingBottom="@dimen/_10sdp"
-                    android:text="@string/payment_with_sms_warning"
+                    android:text="@string/payment_with_email_warning"
                     android:textColor="@color/indigo_dark"
                     android:textSize="14sp" />
 

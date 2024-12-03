@@ -1,27 +1,25 @@
-package com.machinarum.alneo_sdk.ui.method.sms
+package com.machinarum.alneo_sdk.ui.method.email
 
 import android.os.Bundle
-import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.navArgs
-import com.machinarum.alneo_sdk.R
-import com.machinarum.alneo_sdk.databinding.FragmentPaymentSmsBinding
+import com.machinarum.alneo_sdk.databinding.FragmentPaymentEmailBinding
 import com.machinarum.alneo_sdk.utils.Helper
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
 
-class PaymentSMSFragment : Fragment() {
+class PaymentEmailFragment : Fragment() {
 
-    private val args: PaymentSMSFragmentArgs by navArgs()
-    private val viewModel: PaymentSMSVM by viewModel {
+    private val args: PaymentEmailFragmentArgs by navArgs()
+    private val viewModel: PaymentEmailVM by viewModel {
         parametersOf(args.price)
     }
-    private var _binding: FragmentPaymentSmsBinding? = null
+    private var _binding: FragmentPaymentEmailBinding? = null
     private val binding get() = _binding!!
 
 
@@ -29,7 +27,7 @@ class PaymentSMSFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentPaymentSmsBinding.inflate(inflater, container, false)
+        _binding = FragmentPaymentEmailBinding.inflate(inflater, container, false)
         binding.viewModel = viewModel
         binding.lifecycleOwner = viewLifecycleOwner
         return binding.root
@@ -39,13 +37,13 @@ class PaymentSMSFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         observeViewModel()
         binding.nextBtn.setOnClickListener {
-            viewModel.validatePhoneNumber(requireContext())
+            viewModel.validateEmail(context = requireContext())
         }
     }
 
     private fun observeViewModel() {
         lifecycleScope.launch {
-            viewModel.phoneNumberError.collect {
+            viewModel.emailError.collect {
                 if (it != null)
                     Helper.showBasicSnackbar(
                         binding.root,
@@ -58,6 +56,7 @@ class PaymentSMSFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+
     }
 
 }
