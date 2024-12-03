@@ -3,4 +3,34 @@
     <string name="dialog_app_contactless_not_available_description">Müşterilerinizden temassız ödeme alabilmek için NFC eklentimizi uygulama mağazasından indirebilirsiniz.</string>
     <string name="yes_uppercase">EVET</string>
     <string name="no">HAYIR</string>
+
+    <string name="payment_method_direct">Doğrudan Tahsilat</string>
+    <string name="payment_method_direct_description">Müşterilerinizin kart bilgilerini girerek tahsilat yapabilirsiniz.</string>
+    <string name="payment_method_sms">SMS ilə Tahsilat</string>
+    <string name="payment_method_sms_description">Müştərilərinizin cep telefonunu daxil edərək tahsilat edə bilərsiniz.</string>
+    <string name="payment_method_qr">Karekod ilə Tahsilat</string>
+    <string name="payment_method_qr_description">Müştərilərinizdən karekod ilə tahsilat edə bilərsiniz.</string>
+    <string name="payment_method_email">E-Posta İle Tahsilat</string>
+    <string name="payment_method_email_description">Müşterilerinizin e-posta adresini girerek tahsilat yapabilirsiniz.</string>
+    <string name="payment_method_nfc">NFC ilə Tahsilat</string>
+    <string name="payment_method_nfc_description">Müştərilərinizin NFC ilə cihazdan ödəniş etməsinə imkan verin.</string>
+    <string name="to_continue">DEVAM</string>
+
+    <string name="dialog_app_contactless_limit_reached">Temassız ödeme limitini aştınız.</string>
+    <string name="dialog_app_contactless_limit_reached_description">Müşterilerinizden temassız ödeme alabilmek için işlem limitiniz 1500 TL\'dir.</string>
+
+    <string name="payment_with_contactless_description">Bir sonraki adımda müşterinizin kartını cep telefonunuzun arkasına yaklaştırarak tahsilat yapabilirsiniz.</string>
+    <string name="payment_with_contactless_warning">Tahsilat yapabilmeniz için müşterinizi kartınının temassız özelliğine sahip olması gereklidir.</string>
+    <string name="payment_with_contactless_cancel_description">Tahsilatını iptal edeceğiniz müşterinin kartını cep telefonunuz NFC antenine yaklaştırınız. Tahsilat, yalnız kartın işlem gördüğü cihazda iptal edilebilir.</string>
+    <string name="payment_time">İşlem Tarihi</string>
+    <string name="payment_price">Tutar</string>
+    <string name="payment_fixed_price">Net Tutar</string>
+    <string name="payment_process_information">İŞLEM BİLGİSİ</string>
+    <string name="payment_commission">Komisyon</string>
+    <string name="payment_type">Tahsilat Yöntemi</string>
+    <string name="payment_type_text">Doğrudan Tahsilat</string>
+    <string name="payment_session">Tahsilat Oturumu</string>
+    <string name="payment_method_toolbar_title">TAHSİLAT YÖNTEMİ</string>
+    <string name="payment_contactless_toolbar_title">TEMASSIZ TAHSİLAT</string>
+    <string name="input_price_toolbar_title">TUTAR GİRİNİZ</string>
 </resources>

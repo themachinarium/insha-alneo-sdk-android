@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/InputPaymentPriceFragment">
+
+    <fragment
+        android:id="@+id/InputPaymentPriceFragment"
+        android:name="com.machinarum.alneo_sdk.ui.price.InputPaymentPriceFragment"
+        android:label="@string/input_price_toolbar_title"
+        tools:layout="@layout/fragment_input_payment_price">
+        <action
+            android:id="@+id/action_InputPaymentPriceFragment_to_paymentMethodFragment"
+            app:destination="@id/paymentMethodFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/paymentMethodFragment"
+        tools:layout="@layout/fragment_payment_method"
+        android:name="com.machinarum.alneo_sdk.ui.method.PaymentMethodFragment"
+        android:label="@string/payment_method_toolbar_title" >
+        <argument
+            android:name="price"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_paymentMethodFragment_to_paymentContactlessFragment"
+            app:destination="@id/paymentContactlessFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/paymentContactlessFragment"
+        tools:layout="@layout/fragment_payment_contactless"
+        android:name="com.machinarum.alneo_sdk.ui.method.contactless.PaymentContactlessFragment"
+        android:label="@string/payment_contactless_toolbar_title" >
+        <argument
+            android:name="price"
+            app:argType="long" />
+    </fragment>
+
+</navigation>

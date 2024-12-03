@@ -125,4 +125,6 @@
     <color name="done_text_color_normal">#3647c6</color>
     <color name="done_text_color_disabled">#F5188b</color>
 
+    <color name="triadic_50">#80c5cee0</color>
+
 </resources>
