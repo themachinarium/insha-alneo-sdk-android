@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.machinarum.alneo_sdk.databinding.FragmentInputPaymentPriceBinding
-import com.machinarum.alneo_sdk.utils.Helper.navigateSafely
+import com.machinarum.alneo_sdk.utils.navigateSafely
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -40,7 +40,7 @@ class InputPaymentPriceFragment : Fragment() {
                 if (it)
                     findNavController().navigateSafely(
                         InputPaymentPriceFragmentDirections
-                            .actionInputPaymentPriceFragmentToPaymentMethodFragment()
+                            .actionInputPaymentPriceFragmentToPaymentMethodFragment(viewModel.price.value)
                     )
             }
         }

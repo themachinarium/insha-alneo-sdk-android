@@ -75,7 +75,7 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
     implementation(libs.androidx.databinding.runtime)  // Adjust version as needed
-
+    implementation (libs.glide)
 
     //Koin
     api(libs.koin.core)

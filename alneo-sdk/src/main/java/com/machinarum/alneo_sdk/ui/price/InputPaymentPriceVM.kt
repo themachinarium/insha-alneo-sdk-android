@@ -2,6 +2,7 @@ package com.machinarum.alneo_sdk.ui.price
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.machinarum.alneo_sdk.utils.toFormattedString
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asSharedFlow
@@ -37,7 +38,7 @@ class InputPaymentPriceVM : ViewModel() {
         updatePrice(newPrice)
     }
 
-    fun nextButtonClicked() = viewModelScope.launch {
+    fun onNextButtonClicked() = viewModelScope.launch {
         _navigateToPaymentMethod.emit((price.value / 100.0) > 0.0)
     }
 
@@ -47,9 +48,6 @@ class InputPaymentPriceVM : ViewModel() {
             if (newPrice == 0L) DEFAULT_PRICE_FORMAT else newPrice.toFormattedString()
     }
 
-    private fun Long.toFormattedString(): String {
-        val fixedPrice = this / 100.0
-        return String.format(Locale.getDefault(), "%.2f TL", fixedPrice)
-    }
+
 }
 
