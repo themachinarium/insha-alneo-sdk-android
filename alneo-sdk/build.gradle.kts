@@ -100,14 +100,21 @@ dependencies {
         publishing {
             publications {
                 create<MavenPublication>("maven") {
-                    from(components["release"])
+                    from(components["release"]) // Ensure this component exists
                     groupId = "com.github.themachinarium"
                     artifactId = "insha-alneo-sdk-android"
                     version = "1.0.3"
                 }
             }
+            repositories {
+                maven {
+                    // This is the local repository path
+                    url = uri("$buildDir/repository")
+                }
+            }
         }
     }
+
 
 
 }
