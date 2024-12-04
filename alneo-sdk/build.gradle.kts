@@ -101,8 +101,8 @@ dependencies {
             publications {
                 create<MavenPublication>("maven") {
                     from(components["release"])
-                    groupId = "com.machinarum"
-                    artifactId = "alneo-sdk"
+                    groupId = "com.github.themachinarium"
+                    artifactId = "insha-alneo-sdk-android"
                     version = "1.0.3"
                 }
             }
