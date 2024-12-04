@@ -103,7 +103,7 @@ dependencies {
                     from(components["release"])
                     groupId = "com.machinarum"
                     artifactId = "alneo-sdk"
-                    version = "1.0.2"
+                    version = "1.0.3"
                 }
             }
         }
