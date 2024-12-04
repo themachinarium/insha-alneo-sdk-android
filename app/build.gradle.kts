@@ -52,7 +52,7 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
-    implementation ("com.github.themachinarium:insha-alneo-sdk-android:t1.0.2")
+    implementation ("com.github.themachinarium:insha-alneo-sdk-android:v1.0.8")
 
 
     testImplementation(libs.junit)
