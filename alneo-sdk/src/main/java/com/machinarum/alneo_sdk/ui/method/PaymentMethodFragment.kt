@@ -28,7 +28,7 @@ class PaymentMethodFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentPaymentMethodBinding.inflate(inflater, container, false)
-        binding.nfcPayment.isVisible = deviceHasNfc(requireContext())
+       // binding.nfcPayment.isVisible = deviceHasNfc(requireContext())
         return binding.root
     }
 

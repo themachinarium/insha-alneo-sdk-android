@@ -96,18 +96,18 @@ dependencies {
     api(libs.sdp.android)
 
 
-//    afterEvaluate {
-//        publishing {
-//            publications {
-//                create<MavenPublication>("release") {
-//                    from(components["release"])
-//                    groupId = "com.machinarum"
-//                    artifactId = "alneo-sdk"
-//                    version = "1.0"
-//                }
-//            }
-//        }
-//    }
+    afterEvaluate {
+        publishing {
+            publications {
+                create<MavenPublication>("release") {
+                    from(components["release"])
+                    groupId = "com.machinarum"
+                    artifactId = "alneo-sdk"
+                    version = "1.0"
+                }
+            }
+        }
+    }
 
 
 }

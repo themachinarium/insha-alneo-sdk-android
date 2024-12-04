@@ -24,9 +24,11 @@ object AlneoRetrofitClient {
 
         val bundle = applicationInfo?.metaData
 
-        val header = bundle?.getString("ALNEO_SECURITY_HEADER")
+        val secretKey = bundle?.getString("ALNEO_SECRET_KEY")
+        val partnerKey = bundle?.getString("ALNEO_PARTNER_KEY")
+        val userCode = bundle?.getString("ALNEO_USER_CODE")
 
-        return getRetrofit(header).create(AlneoApiServices::class.java)
+        return getRetrofit(secretKey).create(AlneoApiServices::class.java)
     }
 
     private fun getRetrofit(header: String?): Retrofit {
