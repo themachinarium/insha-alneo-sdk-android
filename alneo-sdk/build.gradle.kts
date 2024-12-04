@@ -103,13 +103,7 @@ dependencies {
                     from(components["release"]) // Ensure this component exists
                     groupId = "com.github.themachinarium"
                     artifactId = "insha-alneo-sdk-android"
-                    version = "1.0.3"
-                }
-            }
-            repositories {
-                maven {
-                    // This is the local repository path
-                    url = uri("$buildDir/repository")
+                    version = "1.0.7"
                 }
             }
         }
