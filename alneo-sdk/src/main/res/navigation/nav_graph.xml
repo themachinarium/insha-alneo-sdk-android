@@ -16,9 +16,9 @@
     </fragment>
     <fragment
         android:id="@+id/paymentMethodFragment"
-        tools:layout="@layout/fragment_payment_method"
         android:name="com.machinarum.alneo_sdk.ui.method.PaymentMethodFragment"
-        android:label="@string/payment_method_toolbar_title" >
+        android:label="@string/payment_method_toolbar_title"
+        tools:layout="@layout/fragment_payment_method">
         <argument
             android:name="price"
             app:argType="long" />
@@ -34,12 +34,15 @@
     </fragment>
     <fragment
         android:id="@+id/paymentContactlessFragment"
-        tools:layout="@layout/fragment_payment_contactless"
         android:name="com.machinarum.alneo_sdk.ui.method.contactless.PaymentContactlessFragment"
-        android:label="@string/payment_contactless_toolbar_title" >
+        android:label="@string/payment_contactless_toolbar_title"
+        tools:layout="@layout/fragment_payment_contactless">
         <argument
             android:name="price"
             app:argType="long" />
+        <deepLink
+            android:id="@+id/deepLink"
+            app:uri="@string/deeplink_nfc" />
     </fragment>
     <fragment
         android:id="@+id/paymentSMSFragment"
