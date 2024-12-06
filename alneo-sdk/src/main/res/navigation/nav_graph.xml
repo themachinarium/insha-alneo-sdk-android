@@ -52,6 +52,9 @@
         <argument
             android:name="price"
             app:argType="long" />
+        <action
+            android:id="@+id/action_paymentSMSFragment_to_paymentProcessFragment"
+            app:destination="@id/paymentProcessFragment" />
     </fragment>
     <fragment
         android:id="@+id/paymentEmailFragment"
@@ -61,6 +64,21 @@
         <argument
             android:name="price"
             app:argType="long" />
+        <action
+            android:id="@+id/action_paymentEmailFragment_to_paymentProcessFragment"
+            app:destination="@id/paymentProcessFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/paymentProcessFragment"
+        android:name="com.machinarum.alneo_sdk.ui.method.sms.process.PaymentProcessFragment"
+        android:label=""
+        tools:layout="@layout/fragment_payment_process">
+        <argument
+            android:name="price"
+            app:argType="long" />
+        <argument
+            android:name="paymentType"
+            app:argType="com.machinarum.alneo_sdk.data.models.enums.PaymentType" />
     </fragment>
 
 </navigation>
