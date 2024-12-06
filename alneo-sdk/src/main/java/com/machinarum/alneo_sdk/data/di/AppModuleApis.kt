@@ -6,6 +6,8 @@ import com.machinarum.alneo_sdk.data.api.client.AlneoRetrofitClient
 import com.machinarum.alneo_sdk.data.api.repository.AlneoRepo
 import com.machinarum.alneo_sdk.ui.method.contactless.PaymentContactlessVM
 import com.machinarum.alneo_sdk.ui.method.email.PaymentEmailVM
+import com.machinarum.alneo_sdk.ui.method.qr.PaymentQRVM
+import com.machinarum.alneo_sdk.ui.method.qr.process.PaymentQRProcessVM
 import com.machinarum.alneo_sdk.ui.method.sms.PaymentSMSVM
 import com.machinarum.alneo_sdk.ui.method.sms.process.PaymentProcessVM
 import com.machinarum.alneo_sdk.ui.payment_method.PaymentMethodVM
@@ -29,6 +31,8 @@ object AlneoSdkInitializer {
         viewModel { (price: Long) -> PaymentSMSVM(get(), argsPrice = price) }
         viewModel { (price: Long) -> PaymentEmailVM(get(), argsPrice = price) }
         viewModel { (price: Long) -> PaymentProcessVM(get(), argsPrice = price) }
+        viewModel { (price: Long) -> PaymentQRVM(get(), argsPrice = price) }
+        viewModel { (price: Long) -> PaymentQRProcessVM(get(), argsPrice = price) }
     }
 
     fun initialize(context: Context) {

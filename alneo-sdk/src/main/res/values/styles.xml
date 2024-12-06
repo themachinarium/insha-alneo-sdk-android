@@ -17,10 +17,6 @@
         <item name="colorControlNormal">@color/white</item>
     </style>
 
-    <style name="CheckBoxTheme" parent="Theme.AppCompat.Light">
-        <item name="colorControlNormal">@color/grey_blue</item>
-        <item name="colorControlActivated">@color/colorPrimary</item>
-    </style>
 
     <style name="ToolbarTheme" parent="ThemeOverlay.AppCompat.Light">
         <item name="android:fontFamily">@font/montserrat_semi_bold</item>
@@ -28,22 +24,6 @@
         <item name="textAllCaps">true</item>
     </style>
 
-    <style name="ImageCropContainerTheme" parent="Theme.AppCompat">
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:scrollbarThumbVertical">@color/transparent</item>
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:fontFamily">@font/montserrat_regular</item>
-        <!-- toolbar color -->
-        <item name="colorControlNormal">@color/white</item>
-        <item name="android:windowTranslucentStatus">false</item>
-        <item name="android:windowTranslucentNavigation">false</item>
-    </style>
-
-    <style name="TextAllCapitalDisableAppearance" parent="TextAppearance.Design.Tab">
-        <item name="textAllCaps">false</item>
-    </style>
 
     <style name="Primary.Button" parent="Widget.MaterialComponents.Button.UnelevatedButton">
         <item name="android:textColor">@color/white</item>

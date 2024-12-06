@@ -79,6 +79,13 @@ class PaymentMethodFragment : Fragment() {
             )
 
         }
+        binding.qrPayment.setOnClickListener{
+            findNavController().navigateSafely(
+                PaymentMethodFragmentDirections.actionPaymentMethodFragmentToPaymentQRFragment(
+                    args.price
+                )
+            )
+        }
     }
 
     companion object {
