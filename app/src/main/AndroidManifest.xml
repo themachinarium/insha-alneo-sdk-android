@@ -28,8 +28,15 @@
         </activity>
 
         <meta-data
-            android:name="ALNEO_SECURITY_HEADER"
-            android:value="YourSecurityHeaderValue" />
+            android:name="ALNEO_SECRET_KEY"
+            android:value="SECRET_KEY" />
+        <meta-data
+            android:name="ALNEO_PARTNER_KEY"
+            android:value="PARTNER_KEY" />
+        <meta-data
+            android:name="ALNEO_USER_CODE"
+            android:value="USER_CODE" />
+
     </application>
 
 </manifest>

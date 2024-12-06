@@ -28,7 +28,7 @@ class PaymentMethodFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentPaymentMethodBinding.inflate(inflater, container, false)
-        binding.nfcPayment.isVisible = deviceHasNfc(requireContext())
+       // binding.nfcPayment.isVisible = deviceHasNfc(requireContext())
         return binding.root
     }
 
@@ -43,21 +43,21 @@ class PaymentMethodFragment : Fragment() {
 
         binding.nfcPayment.setOnClickListener {
 
-            if (args.price > MAX_PRICE)
-                showMaterialDialog(
-                    title = getString(R.string.dialog_app_contactless_limit_reached),
-                    description = getString(R.string.dialog_app_contactless_limit_reached_description),
-                    context = requireContext(),
-                    positiveButtonText = getString(R.string.yes_uppercase),
-                    negativeButtonText = getString(R.string.no),
-                    positiveAction = {
-
-                    },
-                    negativeAction = {
-
-                    }
-                )
-            else
+//            if (args.price > MAX_PRICE)
+//                showMaterialDialog(
+//                    title = getString(R.string.dialog_app_contactless_limit_reached),
+//                    description = getString(R.string.dialog_app_contactless_limit_reached_description),
+//                    context = requireContext(),
+//                    positiveButtonText = getString(R.string.yes_uppercase),
+//                    negativeButtonText = getString(R.string.no),
+//                    positiveAction = {
+//
+//                    },
+//                    negativeAction = {
+//
+//                    }
+//                )
+//            else
                 findNavController().navigateSafely(
                     PaymentMethodFragmentDirections.actionPaymentMethodFragmentToPaymentContactlessFragment(
                         args.price

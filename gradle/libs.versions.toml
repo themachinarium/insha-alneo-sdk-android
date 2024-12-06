@@ -3,6 +3,7 @@ agp = "8.7.2"
 converterMoshi = "2.4.0"
 databindingRuntime = "8.7.2"
 glide = "4.16.0"
+inshaAlneoSdkAndroid = "v1.1.10"
 kotlin = "2.0.0"
 coreKtx = "1.15.0"
 junit = "4.13.2"
@@ -41,6 +42,7 @@ androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = 
 androidx-databinding-runtime = { module = "androidx.databinding:databinding-runtime", version.ref = "databindingRuntime" }
 converter-moshi = { module = "com.squareup.retrofit2:converter-moshi", version.ref = "converterMoshi" }
 glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
+insha-alneo-sdk-android = { module = "com.github.themachinarium:insha-alneo-sdk-android", version.ref = "inshaAlneoSdkAndroid" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }

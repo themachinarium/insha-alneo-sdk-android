@@ -7,8 +7,20 @@
     <application android:usesCleartextTraffic="true">
         <activity
             android:name=".ui.MainActivity"
-            android:exported="false"
-            android:theme="@style/AppTheme" />
+            android:exported="true"
+            android:theme="@style/AppTheme" >
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:scheme="https"
+                    android:host="propaytest.protel.com.tr"
+                    android:pathPrefix="/PayneosPlayground/Home/AndroidAppIntegration" />
+            </intent-filter>
+
+        </activity>
         <activity
             android:name=".ui.payment_method.PaymentMethodActivity"
             android:exported="false"

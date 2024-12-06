@@ -1,22 +1,23 @@
 package com.machinarum.alneo_sdk.ui
 
-import android.app.Activity
 import android.os.Bundle
-import androidx.activity.OnBackPressedCallback
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.FragmentActivity
+import androidx.lifecycle.lifecycleScope
+import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.machinarum.alneo_sdk.R
 import com.machinarum.alneo_sdk.databinding.ActivityMainBinding
+import com.machinarum.alneo_sdk.utils.EventBus
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,7 +30,20 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
+        subscribeToObservables(navController)
 
+    }
+
+    private fun subscribeToObservables(navController: NavController) {
+        lifecycleScope.launch {
+            EventBus.navigateDeepLink.observe(this@MainActivity) {
+                it?.let {
+                    if (navController.graph.hasDeepLink(it)) {
+                        navController.navigate(it)
+                    }
+                }
+            }
+        }
     }
 
     override fun onSupportNavigateUp(): Boolean {
