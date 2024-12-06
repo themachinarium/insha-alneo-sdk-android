@@ -23,6 +23,9 @@ class PaymentSMSVM(private val repository: AlneoRepo, argsPrice: Long) : ViewMod
     private val _phoneNumberError = MutableSharedFlow<String?>()
     val phoneNumberError = _phoneNumberError.asSharedFlow()
 
+    private val _navigateToPaymentProcess = MutableSharedFlow<Boolean>()
+    val navigateToPaymentProcess = _navigateToPaymentProcess.asSharedFlow()
+
     fun validatePhoneNumber(context: Context) = viewModelScope.launch {
         when {
             phoneNumber.value.isEmpty() -> {
@@ -36,6 +39,7 @@ class PaymentSMSVM(private val repository: AlneoRepo, argsPrice: Long) : ViewMod
 
             else -> {
                 _phoneNumberError.emit(null)
+                _navigateToPaymentProcess.emit(true)
             }
         }
     }

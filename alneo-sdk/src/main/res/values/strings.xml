@@ -45,4 +45,16 @@
     <string name="payment_with_email_warning">Oluşturulan tahsilat linki sadece 24 saat süre ile aktif durumda kalacaktır.</string>
     <string name="message_email_can_not_be_empty">E-posta adresiniz boş olamaz.</string>
     <string name="message_email_not_valid">Girdiğiniz e-posta adresi geçersizdir.</string>
+    <string name="payment_process_start">Ödeme Başlatılıyor</string>
+    <string name="payment_status_description">Şu an sunucu ile bağlantı sağlanıyor.</string>
+    <string name="payment_installment">Taksit Sayısı</string>
+    <string name="payment_installment_text">Tek Çekim</string>
+    <string name="payment_receipt_id">İşlem Numarası</string>
+    <string name="payment_order_sent_to_customer_via_link">Müşterinizin e-posta adresine ödeme linki gönderilmiştir.</string>
+    <string name="payment_order_sent_to_customer_via_sms">Müşterinizin telefon numarasına ödeme linki gönderilmiştir.</string>
+    <string name="undefined">Tanımsız</string>
+    <string name="payment_order_created">Ödeme Talebi Oluşturuldu</string>
+    <string name="payment_order_not_created">Ödeme Talebi Oluşturulamadı</string>
+    <string name="to_ok">TAMAM</string>
+    <string name="message_payment_process_not_started_description">Sunucudan şu an ödeme bilgisi alınamıyor.</string>
 </resources>

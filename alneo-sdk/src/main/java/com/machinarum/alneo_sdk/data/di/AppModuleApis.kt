@@ -7,6 +7,7 @@ import com.machinarum.alneo_sdk.data.api.repository.AlneoRepo
 import com.machinarum.alneo_sdk.ui.method.contactless.PaymentContactlessVM
 import com.machinarum.alneo_sdk.ui.method.email.PaymentEmailVM
 import com.machinarum.alneo_sdk.ui.method.sms.PaymentSMSVM
+import com.machinarum.alneo_sdk.ui.method.sms.process.PaymentProcessVM
 import com.machinarum.alneo_sdk.ui.payment_method.PaymentMethodVM
 import com.machinarum.alneo_sdk.ui.price.InputPaymentPriceVM
 import org.koin.android.ext.koin.androidContext
@@ -27,6 +28,7 @@ object AlneoSdkInitializer {
         viewModel { (price: Long) -> PaymentContactlessVM(get(), argsPrice = price) }
         viewModel { (price: Long) -> PaymentSMSVM(get(), argsPrice = price) }
         viewModel { (price: Long) -> PaymentEmailVM(get(), argsPrice = price) }
+        viewModel { (price: Long) -> PaymentProcessVM(get(), argsPrice = price) }
     }
 
     fun initialize(context: Context) {

@@ -25,6 +25,9 @@ class PaymentEmailVM(private val repository: AlneoRepo, argsPrice: Long) : ViewM
     private val _emailError = MutableSharedFlow<String?>()
     val emailError = _emailError.asSharedFlow()
 
+    private val _navigateToPaymentProcess = MutableSharedFlow<Boolean>()
+    val navigateToPaymentProcess = _navigateToPaymentProcess.asSharedFlow()
+
     fun validateEmail(context: Context) = viewModelScope.launch {
         when {
             email.value.isEmpty() -> {
@@ -34,6 +37,10 @@ class PaymentEmailVM(private val repository: AlneoRepo, argsPrice: Long) : ViewM
             !Helper.validateEmail(email = email.value) -> {
                 _emailError.emit(value = context.resources.getString(R.string.message_email_not_valid))
             }
+            else -> {
+                _navigateToPaymentProcess.emit(true)
+            }
+
 
         }
 
