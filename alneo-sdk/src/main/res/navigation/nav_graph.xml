@@ -31,6 +31,9 @@
         <action
             android:id="@+id/action_paymentMethodFragment_to_paymentEmailFragment"
             app:destination="@id/paymentEmailFragment" />
+        <action
+            android:id="@+id/action_paymentMethodFragment_to_paymentQRFragment"
+            app:destination="@id/paymentQRFragment" />
     </fragment>
     <fragment
         android:id="@+id/paymentContactlessFragment"
@@ -79,6 +82,27 @@
         <argument
             android:name="paymentType"
             app:argType="com.machinarum.alneo_sdk.data.models.enums.PaymentType" />
+    </fragment>
+    <fragment
+        android:id="@+id/paymentQRFragment"
+        tools:layout="@layout/fragment_payment_qr"
+        android:name="com.machinarum.alneo_sdk.ui.method.qr.PaymentQRFragment"
+        android:label="@string/payment_method_qr" >
+        <argument
+            android:name="price"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_paymentQRFragment_to_paymentQRProcessFragment"
+            app:destination="@id/paymentQRProcessFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/paymentQRProcessFragment"
+        android:name="com.machinarum.alneo_sdk.ui.method.qr.process.PaymentQRProcessFragment"
+        android:label="@string/payment_method_qr"
+        tools:layout="@layout/fragment_payment_qr_process">
+        <argument
+            android:name="price"
+            app:argType="long" />
     </fragment>
 
 </navigation>

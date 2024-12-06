@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.machinarum.alneo_sdk.ui.method.qr.PaymentQRVM" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.method.qr.PaymentQRFragment">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_200sdp"
+            android:layout_alignParentTop="true"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/background_b"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/_20sdp"
+            android:background="@drawable/style_layout_background_f"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:fontFamily="@font/montserrat_regular"
+                android:text="@string/payment_price_uppercase"
+                android:textColor="@color/grey_blue"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/textview_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="@{viewModel.formattedPrice}"
+                android:textColor="@color/indigo_dark"
+                android:textSize="24sp"
+                tools:text="100 TL" />
+
+            <!-- qr image -->
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageview_generated_qr"
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="@dimen/_200sdp"
+                android:layout_margin="@dimen/_10sdp"
+                android:adjustViewBounds="true" />
+
+            <!-- countdown -->
+
+            <TextView
+                android:id="@+id/textview_countdown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/style_layout_background_b_a"
+                android:fontFamily="@font/montserrat_regular"
+                android:gravity="center"
+                android:minWidth="@dimen/_80sdp"
+                android:paddingHorizontal="@dimen/_16sdp"
+                android:paddingVertical="@dimen/_8sdp"
+                android:text="@{viewModel.formattedTime}"
+                android:textColor="@color/indigo_dark"
+                android:textSize="20sp"
+                tools:text="00:00" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_regular"
+                android:gravity="center"
+                android:paddingLeft="@dimen/_10sdp"
+                android:paddingTop="@dimen/_4sdp"
+                android:paddingRight="@dimen/_10sdp"
+                android:text="@string/qr_code_description"
+                android:textColor="@color/indigo_dark"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

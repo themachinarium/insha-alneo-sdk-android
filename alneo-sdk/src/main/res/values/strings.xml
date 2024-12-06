@@ -57,4 +57,7 @@
     <string name="payment_order_not_created">Ödeme Talebi Oluşturulamadı</string>
     <string name="to_ok">TAMAM</string>
     <string name="message_payment_process_not_started_description">Sunucudan şu an ödeme bilgisi alınamıyor.</string>
+    <string name="payment_price_uppercase">TUTAR</string>
+    <string name="qr_code_description">Lütfen karekodu müşterinizin görebileceği şekilde tutunuz.</string>
+    <string name="to_cancel">İPTAL ET</string>
 </resources>

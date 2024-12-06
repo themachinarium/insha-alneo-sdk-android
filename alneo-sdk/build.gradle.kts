@@ -94,6 +94,7 @@ dependencies {
     api(libs.timber)
 
     api(libs.sdp.android)
+    implementation (libs.core)
 
 
     afterEvaluate {
