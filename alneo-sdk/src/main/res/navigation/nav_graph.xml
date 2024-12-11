@@ -127,6 +127,14 @@
         <argument
             android:name="price"
             app:argType="long" />
+        <action
+            android:id="@+id/action_paymentDirectAcceptanceFragment_to_paymentDirect3DFragment"
+            app:destination="@id/paymentDirect3DFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/paymentDirect3DFragment"
+        tools:layout="@layout/fragment_payment_direct_3d"
+        android:name="com.machinarum.alneo_sdk.ui.method.direct.security.PaymentDirect3DFragment"
+        android:label="3D GÜVENLİK EKRANI" />
 
 </navigation>
