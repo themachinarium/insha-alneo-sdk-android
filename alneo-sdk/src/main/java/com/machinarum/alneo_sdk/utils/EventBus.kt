@@ -5,4 +5,5 @@ import android.net.Uri
 object EventBus {
 
     val navigateDeepLink = SingleLiveEvent<Uri?>()
+    val closeDeepLink = SingleLiveEvent<Boolean>()
 }

@@ -49,6 +49,14 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+
+        lifecycleScope.launch {
+            EventBus.closeDeepLink.observe(this@MainActivity) {
+                if (it) {
+                    finish()
+                }
+            }
+        }
     }
 
     override fun onSupportNavigateUp(): Boolean {

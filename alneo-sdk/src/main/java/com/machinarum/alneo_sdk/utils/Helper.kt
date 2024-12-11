@@ -35,7 +35,7 @@ object Helper {
     }
 
     fun validateEmail(email: String?): Boolean {
-        return !TextUtils.isEmpty(email) && Patterns.EMAIL_ADDRESS.matcher(email).matches()
+        return !TextUtils.isEmpty(email) && email?.let { Patterns.EMAIL_ADDRESS.matcher(it).matches() } == true
     }
 
      fun showMaterialDialog(

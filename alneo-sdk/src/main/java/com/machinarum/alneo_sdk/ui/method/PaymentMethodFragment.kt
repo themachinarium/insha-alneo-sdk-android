@@ -28,7 +28,7 @@ class PaymentMethodFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentPaymentMethodBinding.inflate(inflater, container, false)
-       // binding.nfcPayment.isVisible = deviceHasNfc(requireContext())
+        // binding.nfcPayment.isVisible = deviceHasNfc(requireContext())
         return binding.root
     }
 
@@ -58,11 +58,11 @@ class PaymentMethodFragment : Fragment() {
 //                    }
 //                )
 //            else
-                findNavController().navigateSafely(
-                    PaymentMethodFragmentDirections.actionPaymentMethodFragmentToPaymentContactlessFragment(
-                        args.price
-                    )
+            findNavController().navigateSafely(
+                PaymentMethodFragmentDirections.actionPaymentMethodFragmentToPaymentContactlessFragment(
+                    args.price
                 )
+            )
         }
         binding.smsPayment.setOnClickListener {
             findNavController().navigateSafely(
@@ -79,9 +79,16 @@ class PaymentMethodFragment : Fragment() {
             )
 
         }
-        binding.qrPayment.setOnClickListener{
+        binding.qrPayment.setOnClickListener {
             findNavController().navigateSafely(
                 PaymentMethodFragmentDirections.actionPaymentMethodFragmentToPaymentQRFragment(
+                    args.price
+                )
+            )
+        }
+        binding.directPayment.setOnClickListener {
+            findNavController().navigateSafely(
+                PaymentMethodFragmentDirections.actionPaymentMethodFragmentToPaymentDirectFragment(
                     args.price
                 )
             )

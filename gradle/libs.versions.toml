@@ -1,5 +1,6 @@
 [versions]
 agp = "8.7.2"
+androidSdk = "5.5.1"
 converterMoshi = "2.4.0"
 core = "3.4.1"
 databindingRuntime = "8.7.2"
@@ -39,6 +40,7 @@ lifecycleViewmodelKtx = "2.8.7"
 fragmentKtx = "1.8.5"
 
 [libraries]
+android-card-sdk = { module = "io.card:android-sdk", version.ref = "androidSdk" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-databinding-runtime = { module = "androidx.databinding:databinding-runtime", version.ref = "databindingRuntime" }
 converter-moshi = { module = "com.squareup.retrofit2:converter-moshi", version.ref = "converterMoshi" }

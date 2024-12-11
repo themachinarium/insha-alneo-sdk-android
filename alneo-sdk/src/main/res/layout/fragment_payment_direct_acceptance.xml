@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.machinarum.alneo_sdk.ui.method.direct.accept.PaymentDirectAcceptanceVM" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.method.direct.accept.PaymentDirectAcceptanceFragment">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_256sdp"
+            android:layout_alignParentTop="true"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/background"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            app:layout_constraintBottom_toTopOf="@id/linearlayout_container"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <!-- card input container -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginRight="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_60sdp"
+                android:background="@drawable/style_layout_background_f"
+                android:orientation="vertical"
+                android:padding="@dimen/_20sdp">
+
+
+                <!-- company information -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/_20sdp">
+
+                    <!-- avatar -->
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/imageview_company_avatar"
+                        android:layout_width="@dimen/_56sdp"
+                        android:layout_height="@dimen/_56sdp"
+                        android:layout_gravity="center"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/logo_square"
+                        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.CornerSize50Percent" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_16sdp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textview_company_billboard_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:maxLines="2"
+                            android:text="@{viewModel.companyName}"
+                            android:textColor="@color/indigo_dark"
+                            android:textSize="16sp" />
+
+                        <!--
+                        <TextView
+                            android:id="@+id/textview_company_location"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_regular"
+                            android:text="@string/address_text"
+                            android:textColor="@color/indigo_dark"
+                            android:textSize="12sp" />
+                        -->
+
+                        <TextView
+                            android:id="@+id/textview_company_information"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_regular"
+                            android:text="@{viewModel.companyCategory}"
+                            android:textColor="@color/indigo_dark"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- payment information -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_1sdp"
+                    android:layout_marginRight="@dimen/_1sdp"
+                    android:background="@color/gray_pale"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/_10sdp">
+
+                    <!-- price -->
+                    <TextView
+                        android:id="@+id/textview_payment_price"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:gravity="center_vertical"
+                        android:text="@{viewModel.formattedPrice}"
+                        android:textColor="@color/indigo_dark"
+                        android:textSize="30sp"
+                        tools:text="100 TL" />
+
+                    <!-- countdown -->
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@drawable/style_layout_background_b_a">
+
+                        <TextView
+                            android:id="@+id/textview_countdown"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="@dimen/_16sdp"
+                            android:layout_marginTop="@dimen/_8sdp"
+                            android:layout_marginRight="@dimen/_16sdp"
+                            android:layout_marginBottom="@dimen/_8sdp"
+                            android:fontFamily="@font/montserrat_regular"
+                            android:text="00:00"
+                            android:textColor="@color/indigo_dark"
+                            android:textSize="20sp" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <!-- installment information -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:paddingRight="@dimen/_10sdp"
+                    android:text="@string/installement_amout_upper_case"
+                    android:textColor="@color/grey_blue"
+                    android:textSize="14sp" />
+
+                <!-- recylerview -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recylerview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="@dimen/_1sdp"
+                    android:paddingHorizontal="@dimen/_10sdp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <LinearLayout
+            android:id="@+id/linearlayout_container"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <!-- cancel -->
+            <TextView
+                android:id="@+id/relativelayout_cancel"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/grey_blue"
+                android:fontFamily="@font/montserrat_bold"
+                android:gravity="center"
+                android:text="@string/to_reject"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <!-- accept -->
+
+            <TextView
+                android:id="@+id/relativelayout_send"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/bg_gradient_btn"
+                android:fontFamily="@font/montserrat_bold"
+                android:gravity="center"
+                android:text="@string/to_accept"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <com.machinarum.alneo_sdk.utils.view.LoadingLayout
+            android:id="@+id/loading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

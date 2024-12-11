@@ -75,7 +75,7 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
     implementation(libs.androidx.databinding.runtime)  // Adjust version as needed
-    implementation (libs.glide)
+    implementation(libs.glide)
 
     //Koin
     api(libs.koin.core)
@@ -88,13 +88,15 @@ dependencies {
     api(libs.gson)
     api(libs.logging.interceptor)
     api(libs.retrofit2.kotlin.coroutines.adapter)
-    api( libs.converter.moshi)
+    api(libs.converter.moshi)
 
     //Timber
     api(libs.timber)
 
     api(libs.sdp.android)
-    implementation (libs.core)
+    implementation(libs.core)
+    implementation (libs.android.card.sdk)
+
 
 
     afterEvaluate {
@@ -109,7 +111,6 @@ dependencies {
             }
         }
     }
-
 
 
 }

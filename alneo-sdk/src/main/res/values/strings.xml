@@ -60,4 +60,14 @@
     <string name="payment_price_uppercase">TUTAR</string>
     <string name="qr_code_description">Lütfen karekodu müşterinizin görebileceği şekilde tutunuz.</string>
     <string name="to_cancel">İPTAL ET</string>
+    <string name="scan_card">Kartı Tara</string>
+    <string name="or">VEYA</string>
+    <string name="card_owner_name">Kart Sahibinin Adı ve Soyadı</string>
+    <string name="card_number">Kart Numarası</string>
+    <string name="card_expire_date_short">SKT</string>
+    <string name="card_cvc">CVC</string>
+    <string name="card_phone_number">Telefon Numarası</string>
+    <string name="to_reject">REDDET</string>
+    <string name="to_accept">ONAYLA</string>
+    <string name="installement_amout_upper_case">TAKSİT SAYISI</string>
 </resources>
