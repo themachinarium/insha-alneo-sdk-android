@@ -24,14 +24,18 @@ object AlneoRetrofitClient {
 
         val bundle = applicationInfo?.metaData
 
+        val apiKey = bundle?.getString("ALNEO_PARTNER_KEY")
         val secretKey = bundle?.getString("ALNEO_SECRET_KEY")
-        val partnerKey = bundle?.getString("ALNEO_PARTNER_KEY")
         val userCode = bundle?.getString("ALNEO_USER_CODE")
 
-        return getRetrofit(secretKey).create(AlneoApiServices::class.java)
+        return getRetrofit(
+            secretKey = secretKey.orEmpty(),
+            apiKey = apiKey.orEmpty(),
+            userCode = userCode.orEmpty()
+        ).create(AlneoApiServices::class.java)
     }
 
-    private fun getRetrofit(header: String?): Retrofit {
+    private fun getRetrofit(secretKey: String, apiKey: String, userCode: String): Retrofit {
         val client = OkHttpClient.Builder()
             .readTimeout(30, TimeUnit.SECONDS)
             .writeTimeout(30, TimeUnit.SECONDS)
@@ -41,6 +45,9 @@ object AlneoRetrofitClient {
                 val requestBuilder = original.newBuilder()
                     .method(original.method, original.body)
                     .addHeader("Content-Type", "application/json")
+                    .addHeader("x-api-key", apiKey)
+                    .addHeader("x-api-secret", secretKey)
+                    .addHeader("x-user-code", userCode)
                 val request = requestBuilder.build()
                 chain.proceed(request)
             }

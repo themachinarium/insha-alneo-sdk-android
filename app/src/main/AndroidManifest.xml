@@ -18,7 +18,6 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:label="@string/app_name"
             android:theme="@style/Theme.AlneoPOS">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,13 +28,13 @@
 
         <meta-data
             android:name="ALNEO_SECRET_KEY"
-            android:value="SECRET_KEY" />
+            android:value="sk_dev_1a0c24f5-d944-4612-81a0-ff1801e0e64f" />
         <meta-data
             android:name="ALNEO_PARTNER_KEY"
-            android:value="PARTNER_KEY" />
+            android:value="$2a$10$tfjDWpfXJ44bnJiesOMwNuqmPLCH3c0XA3UsAy5rh2OUQv5AXX7Z2" />
         <meta-data
             android:name="ALNEO_USER_CODE"
-            android:value="USER_CODE" />
+            android:value="f9de5a52-76ba-4911-8483-7b5f8142cc8b" />
 
     </application>
 
