@@ -34,6 +34,9 @@
         <action
             android:id="@+id/action_paymentMethodFragment_to_paymentQRFragment"
             app:destination="@id/paymentQRFragment" />
+        <action
+            android:id="@+id/action_paymentMethodFragment_to_paymentDirectFragment"
+            app:destination="@id/paymentDirectFragment" />
     </fragment>
     <fragment
         android:id="@+id/paymentContactlessFragment"
@@ -104,5 +107,34 @@
             android:name="price"
             app:argType="long" />
     </fragment>
+    <fragment
+        android:id="@+id/paymentDirectFragment"
+        android:name="com.machinarum.alneo_sdk.ui.method.direct.PaymentDirectFragment"
+        android:label="@string/payment_method_direct"
+        tools:layout="@layout/fragment_payment_direct">
+        <argument
+            android:name="price"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_paymentDirectFragment_to_paymentDirectAcceptanceFragment"
+            app:destination="@id/paymentDirectAcceptanceFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/paymentDirectAcceptanceFragment"
+        android:name="com.machinarum.alneo_sdk.ui.method.direct.accept.PaymentDirectAcceptanceFragment"
+        android:label="ÖDEME SEÇENEKLERİ"
+        tools:layout="@layout/fragment_payment_direct_acceptance">
+        <argument
+            android:name="price"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_paymentDirectAcceptanceFragment_to_paymentDirect3DFragment"
+            app:destination="@id/paymentDirect3DFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/paymentDirect3DFragment"
+        tools:layout="@layout/fragment_payment_direct_3d"
+        android:name="com.machinarum.alneo_sdk.ui.method.direct.security.PaymentDirect3DFragment"
+        android:label="3D GÜVENLİK EKRANI" />
 
 </navigation>

@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.machinarum.alneo_sdk.ui.method.direct.PaymentDirectVM" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.method.direct.PaymentDirectFragment">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_256sdp"
+            android:layout_alignParentTop="true"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/background"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            app:layout_constraintBottom_toTopOf="@id/nextBtn"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <!-- card input container -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginRight="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_60sdp"
+                android:background="@drawable/style_layout_background_f"
+                android:orientation="vertical"
+                android:padding="@dimen/_20sdp">
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/_96sdp"
+                    android:layout_height="@dimen/_96sdp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:src="@drawable/ic_header_card_add" />
+
+                <!-- scan card -->
+
+
+                <LinearLayout
+                    android:id="@+id/scanCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:background="@drawable/style_layout_background_g"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/_32sdp"
+                        android:layout_height="@dimen/_32sdp"
+                        android:src="@drawable/ic_card_scan"
+                        android:tint="@color/white" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="@string/scan_card"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_1sdp"
+                        android:layout_gravity="center"
+                        android:background="@color/grey_blue_light" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:gravity="center"
+                        android:padding="@dimen/_4sdp"
+                        android:text="@string/or"
+                        android:textColor="@color/grey_blue_light"
+                        android:textSize="12sp" />
+
+                    <RelativeLayout
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_1sdp"
+                        android:layout_gravity="center"
+                        android:background="@color/grey_blue_light" />
+
+                </LinearLayout>
+
+                <!-- holder name -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/input_edittext_holder_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_50sdp"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:hint="@string/card_owner_name"
+                        android:imeOptions="actionNext"
+                        android:inputType="text|textCapWords"
+                        android:text="@{viewModel.cardholderName}"
+                        android:textColor="@color/indigo_dark"
+                        android:textSize="12sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- card number -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/card_number">
+
+                        <com.machinarum.alneo_sdk.utils.view.maskedit.MaskedEditText
+                            android:id="@+id/input_edittext_card_number"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_50sdp"
+                            android:fontFamily="@font/montserrat_regular"
+                            android:imeOptions="actionNext"
+                            android:inputType="numberSigned"
+                            android:text="@{viewModel.cardNumber}"
+                            android:textColor="@color/indigo_dark"
+                            android:textSize="12sp"
+                            app:mask="#### #### #### ####" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imageview_card_associate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:adjustViewBounds="true"
+                        android:visibility="invisible" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal">
+                    <!-- expired date -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/input_layout_expire_date"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="@string/card_expire_date_short">
+
+                        <com.machinarum.alneo_sdk.utils.view.maskedit.MaskedEditText
+                            android:id="@+id/input_edittext_expire_date"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_50sdp"
+                            android:fontFamily="@font/montserrat_regular"
+                            android:imeOptions="actionNext"
+                            android:inputType="numberSigned"
+                            android:text="@{viewModel.expiryDate}"
+                            android:textColor="@color/indigo_dark"
+                            android:textSize="12sp"
+                            app:mask="##/##" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- cvc number -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="@string/card_cvc">
+
+                        <com.machinarum.alneo_sdk.utils.view.maskedit.MaskedEditText
+                            android:id="@+id/input_edittext_cvc_number"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_50sdp"
+                            android:fontFamily="@font/montserrat_regular"
+                            android:imeOptions="actionNext"
+                            android:inputType="numberSigned"
+                            android:text="@{viewModel.cvv}"
+                            android:textColor="@color/indigo_dark"
+                            android:textSize="12sp"
+                            app:mask="###" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+                <!-- phone number -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/card_phone_number">
+
+                    <com.machinarum.alneo_sdk.utils.view.maskedit.MaskedEditText
+                        android:id="@+id/input_edittext_phone_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_50sdp"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:gravity="center_vertical"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:text="@{viewModel.phoneNumber}"
+                        android:textColor="@color/indigo_dark"
+                        android:textSize="12sp"
+                        app:mask="+90 ### ### ####" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- description  -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/input_edittext_description"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_50sdp"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:hint="@string/description_optional"
+                        android:imeOptions="actionDone"
+                        android:inputType="textCapSentences"
+                        android:text="@{viewModel.comment}"
+                        android:textColor="@color/indigo_dark"
+                        android:textSize="12sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/nextBtn"
+            style="@style/Primary.Button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            android:text="@string/to_continue"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <com.machinarum.alneo_sdk.utils.view.LoadingLayout
+            android:id="@+id/loading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
