@@ -25,6 +25,14 @@ fun Long.toFormattedString(): String {
     return String.format(Locale.getDefault(), "%.2f TL", fixedPrice)
 }
 
+fun Double.toFormattedString(): String {
+    return String.format(Locale.getDefault(), "%.2f TL", this)
+}
+
+fun Long.toPrice(): Double {
+    return this / 100.0
+}
+
 fun Context?.generateQRCode(
     text: String,
     height: Int,

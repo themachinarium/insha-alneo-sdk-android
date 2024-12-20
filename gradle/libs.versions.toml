@@ -11,12 +11,12 @@ coreKtx = "1.15.0"
 junit = "4.13.2"
 junitVersion = "1.2.1"
 espressoCore = "3.6.1"
+chuckerLibrary = "4.0.0"
 lifecycleRuntimeKtx = "2.8.7"
 activityCompose = "1.9.3"
-composeBom = "2024.11.00"
+composeBom = "2024.12.01"
 appcompat = "1.7.0"
-material = "1.12.0"
-androidx-navigation = "2.8.4"
+androidx-navigation = "2.8.5"
 
 #Koin
 koinAndroidxWorkmanager = "3.4.0"
@@ -32,17 +32,19 @@ timber = "5.0.1"
 materialVersion = "1.12.0"
 activity = "1.9.3"
 constraintlayout = "2.2.0"
-navigationFragmentKtx = "2.8.4"
-navigationUiKtx = "2.8.4"
+navigationFragmentKtx = "2.8.5"
+navigationUiKtx = "2.8.5"
 legacySupportV4 = "1.0.0"
 lifecycleLivedataKtx = "2.8.7"
 lifecycleViewmodelKtx = "2.8.7"
 fragmentKtx = "1.8.5"
+workRuntimeKtx = "2.10.0"
 
 [libraries]
 android-card-sdk = { module = "io.card:android-sdk", version.ref = "androidSdk" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-databinding-runtime = { module = "androidx.databinding:databinding-runtime", version.ref = "databindingRuntime" }
+androidx-work-runtime-ktx = { module = "androidx.work:work-runtime-ktx", version.ref = "workRuntimeKtx" }
 converter-moshi = { module = "com.squareup.retrofit2:converter-moshi", version.ref = "converterMoshi" }
 core = { module = "com.google.zxing:core", version.ref = "core" }
 glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
@@ -61,6 +63,8 @@ androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-man
 androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+chucker-library = { module = "com.github.chuckerteam.chucker:library", version.ref = "chuckerLibrary" }
+chucker-library-no-op = { module = "com.github.chuckerteam.chucker:library-no-op", version.ref = "chuckerLibrary" }
 sdp-android = { module = "com.intuit.sdp:sdp-android", version.ref = "sdpAndroid" }
 timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
 

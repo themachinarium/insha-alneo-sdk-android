@@ -5,7 +5,7 @@ import com.squareup.moshi.Json
 data class CreateContactlessPaymentSessionRequest(
 
     @Json(name = "payment_channel")
-    val paymentChannel: String,
+    val payment_channel: String,
     @Json(name = "price")
     val price: Double,
     @Json(name = "currency")

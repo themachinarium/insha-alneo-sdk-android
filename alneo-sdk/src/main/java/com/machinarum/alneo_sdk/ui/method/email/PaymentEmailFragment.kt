@@ -60,7 +60,9 @@ class PaymentEmailFragment : Fragment() {
                 if (it)
                     findNavController().navigateSafely(
                         PaymentEmailFragmentDirections.actionPaymentEmailFragmentToPaymentProcessFragment(
-                            args.price, PaymentType.EMAIL
+                            args.price, PaymentType.LINK,
+                            desc = viewModel.description.value,
+                            data = viewModel.email.value
                         )
                     )
             }

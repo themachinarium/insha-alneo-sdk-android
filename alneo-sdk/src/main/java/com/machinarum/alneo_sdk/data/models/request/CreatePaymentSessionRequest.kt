@@ -2,23 +2,27 @@ package com.machinarum.alneo_sdk.data.models.request
 
 import com.squareup.moshi.Json
 
+
 data class CreatePaymentSessionRequest(
     @Json(name = "payment_channel")
-    val paymentChannel: String,
+    val payment_channel: String? = null,
 
     @Json(name = "payment_type")
-    val paymentType: String,
+    val payment_type: String? = null,
 
     @Json(name = "price")
-    val price: Double,
+    val price: Double? = null,
 
     @Json(name = "currency")
-    val currency: String,
+    val currency: String? = null,
 
     @Json(name = "description")
-    val description: String,
+    val description: String? = null,
 
     @Json(name = "source")
-    val source: String
+    val source: String? = null,
+
+    @Json(name = "data")
+    val data: String? = null
 
 )

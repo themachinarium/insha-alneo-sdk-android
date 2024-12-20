@@ -62,7 +62,9 @@ class PaymentSMSFragment : Fragment() {
                 if (it)
                     findNavController().navigateSafely(
                         PaymentSMSFragmentDirections.actionPaymentSMSFragmentToPaymentProcessFragment(
-                            args.price, PaymentType.SMS
+                            args.price, PaymentType.SMS,
+                            desc = viewModel.description.value,
+                            data = viewModel.phoneNumber.value.replace(" ", "").replace("+9", "")
                         )
                     )
             }

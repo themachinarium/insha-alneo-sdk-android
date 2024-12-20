@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.machinarum.alneo_sdk.R
 import com.machinarum.alneo_sdk.data.models.enums.PaymentStatus
@@ -53,13 +54,27 @@ class PaymentProcessFragment : Fragment() {
                         R.string.message_payment_process_not_started_description
                     }
 
-                    PaymentStatus.LOADING -> {
+                    PaymentStatus.DEFAULT -> {
                         R.string.payment_status_description
+                    }
+
+                    PaymentStatus.LOADING -> {
+                        R.string.payment_process_start
                     }
 
                 }
                 binding.textviewDescription.setText(text)
             }
+        }
+        binding.nextBtn.setOnClickListener {
+            if (viewModel.paymentStatus.value == PaymentStatus.DEFAULT)
+                viewModel.createPaymentSession(
+                    description = safeArgs.desc,
+                    paymentType = safeArgs.paymentType,
+                    data = safeArgs.data
+                )
+            else
+                findNavController().navigateUp()
         }
     }
 

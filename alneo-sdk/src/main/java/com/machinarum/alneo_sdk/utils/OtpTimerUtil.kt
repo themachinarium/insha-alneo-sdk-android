@@ -34,7 +34,7 @@ class OtpTimerUtil {
         timer.start()
     }
 
-    private fun stop() {
+     fun stop() {
         if (this::timer.isInitialized)
             timer.cancel()
         _timeFinished.value = false

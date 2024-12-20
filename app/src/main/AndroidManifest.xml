@@ -27,10 +27,10 @@
         </activity>
 
         <meta-data
-            android:name="ALNEO_SECRET_KEY"
+            android:name="ALNEO_PARTNER_KEY"
             android:value="sk_dev_1a0c24f5-d944-4612-81a0-ff1801e0e64f" />
         <meta-data
-            android:name="ALNEO_PARTNER_KEY"
+            android:name="ALNEO_SECRET_KEY"
             android:value="$2a$10$tfjDWpfXJ44bnJiesOMwNuqmPLCH3c0XA3UsAy5rh2OUQv5AXX7Z2" />
         <meta-data
             android:name="ALNEO_USER_CODE"

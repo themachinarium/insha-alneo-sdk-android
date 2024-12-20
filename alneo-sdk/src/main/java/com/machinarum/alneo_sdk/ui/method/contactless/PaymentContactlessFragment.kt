@@ -58,7 +58,7 @@ class PaymentContactlessFragment : Fragment() {
 
         lifecycleScope.launch {
             viewModel.errorMessage.collect {
-                if (it.isNullOrEmpty()) return@collect
+                if (it.isNotEmpty())
                 Helper.showBasicSnackbar(binding.root, it)
             }
         }
@@ -67,6 +67,7 @@ class PaymentContactlessFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         checkNFC()
+        handleDeepLink(requireActivity().intent)
     }
 
     private fun openNFC() {
@@ -123,13 +124,20 @@ class PaymentContactlessFragment : Fragment() {
         }
     }
 
+    private fun handleDeepLink(intent: Intent?) {
+        val dataEncrypt = intent?.data?.getQueryParameter("data")
+        if (dataEncrypt.isNullOrEmpty()) return
+        viewModel.completeContactlessPaymentSession(dataEncrypt)
+        intent.data = null
+    }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
 
     companion object {
-        val contactlessAppPackageName = "com.provisionpay.softpos.alneo"
+        const val contactlessAppPackageName = "com.provisionpay.softpos.alneo"
 
     }
 

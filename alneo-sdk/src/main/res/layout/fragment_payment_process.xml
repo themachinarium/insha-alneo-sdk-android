@@ -5,6 +5,7 @@
 
     <data>
 
+        <import type="android.view.View"/>
         <import type="com.machinarum.alneo_sdk.data.models.enums.PaymentStatus" />
 
         <variable
@@ -44,7 +45,7 @@
                         android:layout_width="@dimen/_96sdp"
                         android:layout_height="@dimen/_96sdp"
                         android:adjustViewBounds="true"
-                        android:src="@{viewModel.paymentStatus == PaymentStatus.LOADING ? @drawable/ic_status_info :viewModel.paymentStatus == PaymentStatus.SUCCESS ? @drawable/ic_status_success : @drawable/ic_status_error}"
+                        android:src="@{viewModel.paymentStatus == PaymentStatus.DEFAULT ? @drawable/ic_status_info :viewModel.paymentStatus == PaymentStatus.SUCCESS ? @drawable/ic_status_success : @drawable/ic_status_error}"
                         tools:srcCompat="@drawable/ic_status_info" />
 
                     <TextView
@@ -54,7 +55,7 @@
                         android:fontFamily="@font/montserrat_regular"
                         android:gravity="center"
                         android:padding="@dimen/_4sdp"
-                        android:text="@{viewModel.paymentStatus == PaymentStatus.LOADING ? @string/payment_process_start :viewModel.paymentStatus == PaymentStatus.SUCCESS ? @string/payment_order_created : @string/payment_order_not_created}"
+                        android:text="@{viewModel.paymentStatus == PaymentStatus.DEFAULT ? @string/payment_process_start :viewModel.paymentStatus == PaymentStatus.SUCCESS ? @string/payment_order_created : @string/payment_order_not_created}"
                         tools:text="@string/payment_process_start"
                         android:textColor="@color/white"
                         android:textSize="20sp" />
@@ -220,15 +221,16 @@
             style="@style/Primary.Button"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_50sdp"
-            android:text="@{viewModel.paymentStatus == PaymentStatus.LOADING ? @string/to_continue  : @string/to_ok}"
+            android:text="@{viewModel.paymentStatus == PaymentStatus.DEFAULT ? @string/to_continue  : @string/to_ok}"
             tools:text="@string/to_continue"
             app:layout_constraintBottom_toBottomOf="parent" />
 
         <com.machinarum.alneo_sdk.utils.view.LoadingLayout
             android:id="@+id/loading"
+            tools:visibility="gone"
+            android:visibility="@{viewModel.paymentStatus == PaymentStatus.LOADING ? View.VISIBLE : View.GONE}"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:visibility="gone" />
+            android:layout_height="match_parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

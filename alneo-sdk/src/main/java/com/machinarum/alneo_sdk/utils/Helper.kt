@@ -85,4 +85,12 @@ object Helper {
             .show()
     }
 
+    fun calculateNetPrice(price: Double, commissionRate: Double, percentageBase: Double = 100.0): Double {
+        if (commissionRate < 0) {
+            throw IllegalArgumentException("Commission rate cannot be negative.")
+        }
+        return price * percentageBase / (percentageBase + commissionRate)
+    }
+
+
 }
