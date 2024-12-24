@@ -2,22 +2,23 @@ package com.machinarum.alneo_sdk.data.api.client
 
 import android.content.Context
 import android.content.pm.PackageManager
-import android.util.Log
+import com.chuckerteam.chucker.api.ChuckerCollector
+import com.chuckerteam.chucker.api.ChuckerInterceptor
+import com.chuckerteam.chucker.api.RetentionManager
 import com.machinarum.alneo_sdk.data.api.interceptors.HttpLoggingInterceptor
 import com.machinarum.alneo_sdk.data.api.services.AlneoApiServices
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
-import timber.log.Timber
 import java.util.concurrent.TimeUnit
 
 object AlneoRetrofitClient {
 
-    private const val BASE_URL = "https://alneomac.2sworks.com"
+    private const val BASE_URL = "https://alneomac.2sworks.com/service/payment/"
 
 
-    fun provideAlneoApi(context: Context?): AlneoApiServices {
-        val applicationInfo = context?.packageManager?.getApplicationInfo(
+    fun provideAlneoApi(context: Context): AlneoApiServices {
+        val applicationInfo = context.packageManager?.getApplicationInfo(
             context.packageName,
             PackageManager.GET_META_DATA
         )
@@ -31,11 +32,13 @@ object AlneoRetrofitClient {
         return getRetrofit(
             secretKey = secretKey.orEmpty(),
             apiKey = apiKey.orEmpty(),
-            userCode = userCode.orEmpty()
+            userCode = userCode.orEmpty(),
+            context = context
         ).create(AlneoApiServices::class.java)
     }
 
-    private fun getRetrofit(secretKey: String, apiKey: String, userCode: String): Retrofit {
+    private fun getRetrofit(secretKey: String, apiKey: String, userCode: String,context: Context): Retrofit {
+
         val client = OkHttpClient.Builder()
             .readTimeout(30, TimeUnit.SECONDS)
             .writeTimeout(30, TimeUnit.SECONDS)
@@ -51,6 +54,7 @@ object AlneoRetrofitClient {
                 val request = requestBuilder.build()
                 chain.proceed(request)
             }
+            .addInterceptor(ChuckerInterceptor(context))
             .addNetworkInterceptor(HttpLoggingInterceptor.getInterceptor()).build()
 
         return Retrofit.Builder()

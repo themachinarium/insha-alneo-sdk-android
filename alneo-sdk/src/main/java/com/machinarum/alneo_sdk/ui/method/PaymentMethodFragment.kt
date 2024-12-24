@@ -8,10 +8,8 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import com.machinarum.alneo_sdk.R
 import com.machinarum.alneo_sdk.databinding.FragmentPaymentMethodBinding
 import com.machinarum.alneo_sdk.utils.Helper.deviceHasNfc
-import com.machinarum.alneo_sdk.utils.Helper.showMaterialDialog
 import com.machinarum.alneo_sdk.utils.navigateSafely
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -28,7 +26,7 @@ class PaymentMethodFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentPaymentMethodBinding.inflate(inflater, container, false)
-        // binding.nfcPayment.isVisible = deviceHasNfc(requireContext())
+         binding.nfcPayment.isVisible = deviceHasNfc(requireContext())
         return binding.root
     }
 

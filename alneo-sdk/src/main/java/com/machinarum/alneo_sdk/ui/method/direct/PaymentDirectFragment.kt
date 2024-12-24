@@ -35,7 +35,7 @@ class PaymentDirectFragment : Fragment() {
             if (it.resultCode == 13274384) {
                 val extraData =
                     it.data?.getParcelableExtra<CreditCard>(CardIOActivity.EXTRA_SCAN_RESULT)
-                    viewModel.setCard(value =extraData )
+                viewModel.setCard(value = extraData)
             }
         }
 

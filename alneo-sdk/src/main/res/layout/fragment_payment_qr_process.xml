@@ -210,22 +210,23 @@
         </LinearLayout>
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/cancelButton"
+            style="@style/Primary.Button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            android:text="@string/to_cancel"
+            android:backgroundTint="@color/grey_blue"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/nextBtn"
             style="@style/Primary.Button"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_50sdp"
             android:text="@string/to_ok"
+            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/cancelBtn"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_50sdp"
-            android:backgroundTint="@color/grey_blue"
-            android:insetTop="0dp"
-            android:insetBottom="0dp"
-            android:text="@string/to_cancel"
-            app:layout_constraintBottom_toBottomOf="parent" />
 
         <com.machinarum.alneo_sdk.utils.view.LoadingLayout
             android:id="@+id/loading"

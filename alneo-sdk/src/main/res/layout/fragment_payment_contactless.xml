@@ -186,6 +186,7 @@
                             android:layout_weight="1"
                             android:fontFamily="@font/montserrat_medium"
                             android:gravity="end"
+                            android:text="@string/payment_method_nfc"
                             android:textColor="@color/black" />
                     </LinearLayout>
 
@@ -212,6 +213,7 @@
                             android:layout_weight="1"
                             android:fontFamily="@font/montserrat_medium"
                             android:gravity="end"
+                            android:text="@{viewModel.paymentSession}"
                             android:textColor="@color/black" />
                     </LinearLayout>
 
@@ -244,7 +246,7 @@
             android:id="@+id/loading"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="gone" />
+            tools:visibility="gone" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

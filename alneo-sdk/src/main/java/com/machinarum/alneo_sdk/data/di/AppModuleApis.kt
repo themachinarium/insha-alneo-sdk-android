@@ -13,7 +13,6 @@ import com.machinarum.alneo_sdk.ui.method.qr.PaymentQRVM
 import com.machinarum.alneo_sdk.ui.method.qr.process.PaymentQRProcessVM
 import com.machinarum.alneo_sdk.ui.method.sms.PaymentSMSVM
 import com.machinarum.alneo_sdk.ui.method.sms.process.PaymentProcessVM
-import com.machinarum.alneo_sdk.ui.payment_method.PaymentMethodVM
 import com.machinarum.alneo_sdk.ui.price.InputPaymentPriceVM
 import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -28,17 +27,22 @@ object AlneoSdkInitializer {
     private val sdkModule = module {
         single { AlneoRetrofitClient.provideAlneoApi(appContext) }
         factory { AlneoRepo(get()) }
-        viewModel { PaymentMethodVM(get()) }
         viewModel { InputPaymentPriceVM() }
         viewModel { (price: Long) -> PaymentContactlessVM(get(), argsPrice = price) }
         viewModel { (price: Long) -> PaymentSMSVM(get(), argsPrice = price) }
         viewModel { (price: Long) -> PaymentEmailVM(get(), argsPrice = price) }
         viewModel { (price: Long) -> PaymentProcessVM(get(), argsPrice = price) }
         viewModel { (price: Long) -> PaymentQRVM(get(), argsPrice = price) }
-        viewModel { (price: Long) -> PaymentQRProcessVM(get(), argsPrice = price) }
+        viewModel { (price: Long, sessionToken: String) ->
+            PaymentQRProcessVM(
+                get(),
+                argsPrice = price,
+                sessionToken = sessionToken
+            )
+        }
         viewModel { (price: Long) -> PaymentDirectVM(get(), argsPrice = price) }
         viewModel { (price: Long) -> PaymentDirectAcceptanceVM(get(), argsPrice = price) }
-        viewModel {  PaymentDirect3DVM() }
+        viewModel { PaymentDirect3DVM() }
     }
 
     fun initialize(context: Context) {

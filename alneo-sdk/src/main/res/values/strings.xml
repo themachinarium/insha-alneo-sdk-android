@@ -70,4 +70,9 @@
     <string name="to_reject">REDDET</string>
     <string name="to_accept">ONAYLA</string>
     <string name="installement_amout_upper_case">TAKSİT SAYISI</string>
+    <string name="dialog_payment_cancel">Ödeme İşlemi İptali</string>
+    <string name="dialog_payment_cancel_description">Ödeme işleminiz iptal ediliyor. Emin misiniz?</string>
+    <string name="message_payment_process_started">Ödeme İşlemi Başlatıldı</string>
+    <string name="message_payment_process_started_3d_screen_description">Lütfen bekleyiniz, müşteriniz şu an 3D güvenlik ekranını açtı.</string>
+    <string name="message_payment_process_not_started">Ödeme İşlemi Başlatılamadı</string>
 </resources>

@@ -78,8 +78,8 @@ dependencies {
     implementation(libs.glide)
 
     //Koin
-    api(libs.koin.core)
-    api(libs.koin.androidx.workmanager)
+    implementation(libs.koin.core)
+    implementation(libs.koin.androidx.workmanager)
     testApi(libs.koin.test)
 
     //Retrofit
@@ -91,12 +91,15 @@ dependencies {
     api(libs.converter.moshi)
 
     //Timber
-    api(libs.timber)
+    implementation(libs.timber)
 
-    api(libs.sdp.android)
+    implementation(libs.sdp.android)
     implementation(libs.core)
-    implementation (libs.android.card.sdk)
+    implementation(libs.android.card.sdk)
 
+    implementation (libs.androidx.work.runtime.ktx)
+    debugImplementation (libs.chucker.library)
+    releaseImplementation (libs.chucker.library.no.op)
 
 
     afterEvaluate {

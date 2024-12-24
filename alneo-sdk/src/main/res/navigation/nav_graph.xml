@@ -60,7 +60,8 @@
             app:argType="long" />
         <action
             android:id="@+id/action_paymentSMSFragment_to_paymentProcessFragment"
-            app:destination="@id/paymentProcessFragment" />
+            app:destination="@id/paymentProcessFragment"
+            app:popUpTo="@id/nav_graph" />
     </fragment>
     <fragment
         android:id="@+id/paymentEmailFragment"
@@ -72,7 +73,8 @@
             app:argType="long" />
         <action
             android:id="@+id/action_paymentEmailFragment_to_paymentProcessFragment"
-            app:destination="@id/paymentProcessFragment" />
+            app:destination="@id/paymentProcessFragment"
+            app:popUpTo="@id/nav_graph" />
     </fragment>
     <fragment
         android:id="@+id/paymentProcessFragment"
@@ -85,6 +87,13 @@
         <argument
             android:name="paymentType"
             app:argType="com.machinarum.alneo_sdk.data.models.enums.PaymentType" />
+        <argument
+            android:name="desc"
+            app:argType="string" />
+        <argument
+            android:name="data"
+            app:argType="string"
+            app:nullable="true" />
     </fragment>
     <fragment
         android:id="@+id/paymentQRFragment"
@@ -96,7 +105,9 @@
             app:argType="long" />
         <action
             android:id="@+id/action_paymentQRFragment_to_paymentQRProcessFragment"
-            app:destination="@id/paymentQRProcessFragment" />
+            app:destination="@id/paymentQRProcessFragment"
+            app:popUpTo="@id/paymentQRFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/paymentQRProcessFragment"
@@ -106,6 +117,9 @@
         <argument
             android:name="price"
             app:argType="long" />
+        <argument
+            android:name="sessionToken"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/paymentDirectFragment"

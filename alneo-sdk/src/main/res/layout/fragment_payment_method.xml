@@ -7,363 +7,369 @@
 
     </data>
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/gray_pale"
-        android:orientation="vertical"
-        tools:context=".ui.method.PaymentMethodFragment">
+        android:fillViewport="true">
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/directPayment"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/_16sdp"
-            android:layout_marginTop="@dimen/_20sdp"
-            android:elevation="0dp"
-            app:cardBackgroundColor="@color/white"
-            app:cardCornerRadius="@dimen/_8sdp"
-            app:cardElevation="0dp"
-            app:strokeColor="@color/triadic_50"
-            app:strokeWidth="1dp">
+            android:background="@color/gray_pale"
+            android:orientation="vertical"
+            tools:context=".ui.method.PaymentMethodFragment">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/directPayment"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:minHeight="@dimen/_60sdp"
-                android:paddingHorizontal="@dimen/_10sdp">
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:elevation="0dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="@dimen/_8sdp"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/triadic_50"
+                app:strokeWidth="1dp">
 
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/directPaymentIcon"
-                    android:layout_width="@dimen/_40sdp"
-                    android:layout_height="@dimen/_40sdp"
-                    android:layout_gravity="center_vertical"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/ic_direct_payment" />
-
-                <TextView
-                    android:id="@+id/directPaymentTitle"
-                    android:layout_width="0dp"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/montserrat_medium"
-                    android:text="@string/payment_method_direct"
-                    android:textColor="@color/indigo_dark"
-                    android:textSize="16sp"
-                    android:layout_marginHorizontal="@dimen/_4sdp"
-                    app:layout_constraintBottom_toTopOf="@+id/directPaymentDescription"
-                    app:layout_constraintEnd_toStartOf="@id/direct_arrow"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@id/directPaymentIcon"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_chainStyle="packed" />
+                    android:minHeight="@dimen/_60sdp"
+                    android:paddingHorizontal="@dimen/_10sdp">
 
-                <TextView
-                    android:id="@+id/directPaymentDescription"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:fontFamily="@font/montserrat_regular"
-                    android:text="@string/payment_method_direct_description"
-                    android:textColor="@color/indigo_dark"
-                    android:textSize="12sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@id/directPaymentTitle"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toStartOf="@id/directPaymentTitle"
-                    app:layout_constraintTop_toBottomOf="@+id/directPaymentTitle" />
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/directPaymentIcon"
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_gravity="center_vertical"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_direct_payment" />
 
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/direct_arrow"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/ic_arrow_right_24" />
+                    <TextView
+                        android:id="@+id/directPaymentTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_4sdp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="@string/payment_method_direct"
+                        android:textColor="@color/indigo_dark"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toTopOf="@+id/directPaymentDescription"
+                        app:layout_constraintEnd_toStartOf="@id/direct_arrow"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@id/directPaymentIcon"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_chainStyle="packed" />
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </com.google.android.material.card.MaterialCardView>
-        <!-- Email Payment -->
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/emailPayment"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/_16sdp"
-            android:layout_marginTop="@dimen/_8sdp"
-            android:elevation="0dp"
-            app:cardBackgroundColor="@color/white"
-            app:cardCornerRadius="@dimen/_8sdp"
-            app:strokeColor="@color/triadic_50"
-            app:strokeWidth="1dp">
+                    <TextView
+                        android:id="@+id/directPaymentDescription"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:text="@string/payment_method_direct_description"
+                        android:textColor="@color/indigo_dark"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@id/directPaymentTitle"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="@id/directPaymentTitle"
+                        app:layout_constraintTop_toBottomOf="@+id/directPaymentTitle" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/direct_arrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_arrow_right_24" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+            <!-- Email Payment -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/emailPayment"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:minHeight="@dimen/_60sdp"
-                android:paddingHorizontal="@dimen/_10sdp">
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:elevation="0dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="@dimen/_8sdp"
+                app:strokeColor="@color/triadic_50"
+                app:strokeWidth="1dp">
 
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/emailPaymentIcon"
-                    android:layout_width="@dimen/_40sdp"
-                    android:layout_height="@dimen/_40sdp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/ic_email_payment" />
-
-                <TextView
-                    android:id="@+id/emailPaymentTitle"
-                    android:layout_width="0dp"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/montserrat_medium"
-                    android:text="@string/payment_method_email"
-                    android:textColor="@color/indigo_dark"
-                    android:textSize="16sp"
-                    android:layout_marginHorizontal="@dimen/_4sdp"
-                    app:layout_constraintBottom_toTopOf="@+id/emailPaymentDescription"
-                    app:layout_constraintEnd_toStartOf="@id/email_arrow"
-                    app:layout_constraintStart_toEndOf="@id/emailPaymentIcon"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_chainStyle="packed" />
+                    android:minHeight="@dimen/_60sdp"
+                    android:paddingHorizontal="@dimen/_10sdp">
 
-                <TextView
-                    android:id="@+id/emailPaymentDescription"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:fontFamily="@font/montserrat_regular"
-                    android:text="@string/payment_method_email_description"
-                    android:textColor="@color/indigo_dark"
-                    android:textSize="12sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@id/emailPaymentTitle"
-                    app:layout_constraintStart_toStartOf="@id/emailPaymentTitle"
-                    app:layout_constraintTop_toBottomOf="@+id/emailPaymentTitle" />
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/emailPaymentIcon"
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_email_payment" />
 
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/email_arrow"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/ic_arrow_right_24" />
+                    <TextView
+                        android:id="@+id/emailPaymentTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_4sdp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="@string/payment_method_email"
+                        android:textColor="@color/indigo_dark"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toTopOf="@+id/emailPaymentDescription"
+                        app:layout_constraintEnd_toStartOf="@id/email_arrow"
+                        app:layout_constraintStart_toEndOf="@id/emailPaymentIcon"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_chainStyle="packed" />
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </com.google.android.material.card.MaterialCardView>
+                    <TextView
+                        android:id="@+id/emailPaymentDescription"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:text="@string/payment_method_email_description"
+                        android:textColor="@color/indigo_dark"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@id/emailPaymentTitle"
+                        app:layout_constraintStart_toStartOf="@id/emailPaymentTitle"
+                        app:layout_constraintTop_toBottomOf="@+id/emailPaymentTitle" />
 
-        <!-- SMS Payment -->
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/smsPayment"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/_16sdp"
-            android:layout_marginTop="@dimen/_8sdp"
-            android:elevation="0dp"
-            app:cardBackgroundColor="@color/white"
-            app:cardCornerRadius="@dimen/_8sdp"
-            app:strokeColor="@color/triadic_50"
-            app:strokeWidth="1dp">
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/email_arrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_arrow_right_24" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- SMS Payment -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/smsPayment"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:minHeight="@dimen/_60sdp"
-                android:paddingHorizontal="@dimen/_10sdp">
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:elevation="0dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="@dimen/_8sdp"
+                app:strokeColor="@color/triadic_50"
+                app:strokeWidth="1dp">
 
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/smsPaymentIcon"
-                    android:layout_width="@dimen/_40sdp"
-                    android:layout_height="@dimen/_40sdp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/ic_sms_payment" />
-
-                <TextView
-                    android:id="@+id/smsPaymentTitle"
-                    android:layout_width="0dp"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/montserrat_medium"
-                    android:text="@string/payment_method_sms"
-                    android:textColor="@color/indigo_dark"
-                    android:textSize="16sp"
-                    android:layout_marginHorizontal="@dimen/_4sdp"
+                    android:minHeight="@dimen/_60sdp"
+                    android:paddingHorizontal="@dimen/_10sdp">
 
-                    app:layout_constraintBottom_toTopOf="@+id/smsPaymentDescription"
-                    app:layout_constraintEnd_toStartOf="@id/sms_arrow"
-                    app:layout_constraintStart_toEndOf="@id/smsPaymentIcon"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_chainStyle="packed" />
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/smsPaymentIcon"
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_sms_payment" />
 
-                <TextView
-                    android:id="@+id/smsPaymentDescription"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:fontFamily="@font/montserrat_regular"
-                    android:text="@string/payment_method_sms_description"
-                    android:textColor="@color/indigo_dark"
-                    android:textSize="12sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@id/smsPaymentTitle"
-                    app:layout_constraintStart_toStartOf="@id/smsPaymentTitle"
-                    app:layout_constraintTop_toBottomOf="@+id/smsPaymentTitle" />
+                    <TextView
+                        android:id="@+id/smsPaymentTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_4sdp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="@string/payment_method_sms"
+                        android:textColor="@color/indigo_dark"
+                        android:textSize="16sp"
 
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/sms_arrow"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/ic_arrow_right_24" />
+                        app:layout_constraintBottom_toTopOf="@+id/smsPaymentDescription"
+                        app:layout_constraintEnd_toStartOf="@id/sms_arrow"
+                        app:layout_constraintStart_toEndOf="@id/smsPaymentIcon"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_chainStyle="packed" />
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </com.google.android.material.card.MaterialCardView>
+                    <TextView
+                        android:id="@+id/smsPaymentDescription"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:text="@string/payment_method_sms_description"
+                        android:textColor="@color/indigo_dark"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@id/smsPaymentTitle"
+                        app:layout_constraintStart_toStartOf="@id/smsPaymentTitle"
+                        app:layout_constraintTop_toBottomOf="@+id/smsPaymentTitle" />
 
-        <!-- QR Code Payment -->
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/qrPayment"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/_16sdp"
-            android:layout_marginTop="@dimen/_8sdp"
-            android:elevation="0dp"
-            app:cardBackgroundColor="@color/white"
-            app:cardCornerRadius="@dimen/_8sdp"
-            app:strokeColor="@color/triadic_50"
-            app:strokeWidth="1dp">
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/sms_arrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_arrow_right_24" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- QR Code Payment -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/qrPayment"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:minHeight="@dimen/_60sdp"
-                android:paddingHorizontal="@dimen/_10sdp">
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:elevation="0dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="@dimen/_8sdp"
+                app:strokeColor="@color/triadic_50"
+                app:strokeWidth="1dp">
 
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/qrPaymentIcon"
-                    android:layout_width="@dimen/_40sdp"
-                    android:layout_height="@dimen/_40sdp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/ic_qr_payment" />
-
-                <TextView
-                    android:id="@+id/qrPaymentTitle"
-                    android:layout_width="0dp"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/montserrat_medium"
-                    android:text="@string/payment_method_qr"
-                    android:textColor="@color/indigo_dark"
-                    android:textSize="16sp"
-                    android:layout_marginHorizontal="@dimen/_4sdp"
+                    android:minHeight="@dimen/_60sdp"
+                    android:paddingHorizontal="@dimen/_10sdp">
 
-                    app:layout_constraintBottom_toTopOf="@+id/qrPaymentDescription"
-                    app:layout_constraintEnd_toStartOf="@id/qr_arrow"
-                    app:layout_constraintStart_toEndOf="@id/qrPaymentIcon"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_chainStyle="packed" />
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/qrPaymentIcon"
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_qr_payment" />
 
-                <TextView
-                    android:id="@+id/qrPaymentDescription"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:fontFamily="@font/montserrat_regular"
-                    android:text="@string/payment_method_qr_description"
-                    android:textColor="@color/indigo_dark"
-                    android:textSize="12sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@id/qrPaymentTitle"
-                    app:layout_constraintStart_toStartOf="@id/qrPaymentTitle"
-                    app:layout_constraintTop_toBottomOf="@+id/qrPaymentTitle" />
+                    <TextView
+                        android:id="@+id/qrPaymentTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_4sdp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="@string/payment_method_qr"
+                        android:textColor="@color/indigo_dark"
+                        android:textSize="16sp"
 
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/qr_arrow"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/ic_arrow_right_24" />
+                        app:layout_constraintBottom_toTopOf="@+id/qrPaymentDescription"
+                        app:layout_constraintEnd_toStartOf="@id/qr_arrow"
+                        app:layout_constraintStart_toEndOf="@id/qrPaymentIcon"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_chainStyle="packed" />
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </com.google.android.material.card.MaterialCardView>
+                    <TextView
+                        android:id="@+id/qrPaymentDescription"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:text="@string/payment_method_qr_description"
+                        android:textColor="@color/indigo_dark"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@id/qrPaymentTitle"
+                        app:layout_constraintStart_toStartOf="@id/qrPaymentTitle"
+                        app:layout_constraintTop_toBottomOf="@+id/qrPaymentTitle" />
 
-        <!-- NFC Payment -->
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/nfcPayment"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/_16sdp"
-            android:layout_marginTop="@dimen/_8sdp"
-            android:elevation="0dp"
-            app:cardBackgroundColor="@color/white"
-            app:cardCornerRadius="@dimen/_8sdp"
-            app:strokeColor="@color/triadic_50"
-            app:strokeWidth="1dp">
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/qr_arrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_arrow_right_24" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- NFC Payment -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/nfcPayment"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:minHeight="@dimen/_60sdp"
-                android:paddingHorizontal="@dimen/_10sdp">
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:elevation="0dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="@dimen/_8sdp"
+                app:strokeColor="@color/triadic_50"
+                app:strokeWidth="1dp">
 
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/nfcPaymentIcon"
-                    android:layout_width="@dimen/_40sdp"
-                    android:layout_height="@dimen/_40sdp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/ic_contactless_nfc" />
-
-                <TextView
-                    android:id="@+id/nfcPaymentTitle"
-                    android:layout_width="0dp"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="@dimen/_4sdp"
-                    android:fontFamily="@font/montserrat_medium"
-                    android:text="@string/payment_method_nfc"
-                    android:textColor="@color/indigo_dark"
-                    android:textSize="16sp"
-                    app:layout_constraintBottom_toTopOf="@+id/nfcPaymentDescription"
-                    app:layout_constraintEnd_toStartOf="@id/nfc_arrow"
-                    app:layout_constraintStart_toEndOf="@id/nfcPaymentIcon"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_chainStyle="packed" />
+                    android:minHeight="@dimen/_60sdp"
+                    android:paddingHorizontal="@dimen/_10sdp">
 
-                <TextView
-                    android:id="@+id/nfcPaymentDescription"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:fontFamily="@font/montserrat_regular"
-                    android:text="@string/payment_method_nfc_description"
-                    android:textColor="@color/indigo_dark"
-                    android:textSize="12sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@id/nfcPaymentTitle"
-                    app:layout_constraintStart_toStartOf="@id/nfcPaymentTitle"
-                    app:layout_constraintTop_toBottomOf="@+id/nfcPaymentTitle" />
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/nfcPaymentIcon"
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_contactless_nfc" />
 
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/nfc_arrow"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/ic_arrow_right_24" />
+                    <TextView
+                        android:id="@+id/nfcPaymentTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_4sdp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="@string/payment_method_nfc"
+                        android:textColor="@color/indigo_dark"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toTopOf="@+id/nfcPaymentDescription"
+                        app:layout_constraintEnd_toStartOf="@id/nfc_arrow"
+                        app:layout_constraintStart_toEndOf="@id/nfcPaymentIcon"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_chainStyle="packed" />
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </com.google.android.material.card.MaterialCardView>
+                    <TextView
+                        android:id="@+id/nfcPaymentDescription"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:text="@string/payment_method_nfc_description"
+                        android:textColor="@color/indigo_dark"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@id/nfcPaymentTitle"
+                        app:layout_constraintStart_toStartOf="@id/nfcPaymentTitle"
+                        app:layout_constraintTop_toBottomOf="@+id/nfcPaymentTitle" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/nfc_arrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_arrow_right_24" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
 
 
+        </LinearLayout>
+    </ScrollView>
 
-    </LinearLayout>
 </layout>
